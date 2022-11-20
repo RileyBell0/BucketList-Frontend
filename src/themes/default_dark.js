@@ -1,0 +1,27 @@
+const defaultThemeDark = {
+  "--color-primary": "#481c6a",
+  "--accent-main": "var(--color-primary)",
+  "--color-primary-inverse": "white",
+  "--color-secondary": "#af87ce",
+  "--color-secondary-inverse": "white",
+  "--color-tertiary": "#9d669c",
+  "--color-tertiary-inverse": "white",
+  "--color-warning": "#940019",
+  "--color-header": "#d4affd",
+  "--color-subheader": "#fefefe",
+  "--color-text-basic": "white",
+  "--card-color": "#292929",
+  "--field-color": "#363636",
+  "--bg-opacity": "0.08",
+  "--bg-color": "#06000c",
+  "--color-shadow": "#00000080",
+  "--color-inactive": "var(--color-header)",
+  "--color-inactive-alt": "var(--card-color)",
+  "--color-disabled": "#3c3c3c",
+  "--color-disabled-alt": "white",
+  "--outer-card-color": "#00000080",
+  "--color-outline": "#90909080",
+  "--map-marker-color": "#481c6a",
+};
+
+export default defaultThemeDark;

@@ -1,0 +1,9 @@
+.loading-icon {
+  fill: var(--color-tertiary);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 52px;
+  max-height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}

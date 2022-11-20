@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches previous GenericButton snapshot 1`] = `
+<div>
+  <button
+    className="generic-button undefined"
+    style={
+      Object {
+        "maxWidth": undefined,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Matches previous GenericDropdown snapshot 1`] = `
+<div>
+  <p
+    className="generic-field__name"
+  >
+    Test Title
+  </p>
+  <div
+    className="generic-drop-down__container"
+  >
+    <select
+      className="generic-drop-down"
+    >
+      <option>
+        option 1
+      </option>
+      <option>
+        option 2
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`Matches previous GenericImageInput snapshot 1`] = `
+<div
+  className="generic-image-input"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDragEnter={[Function]}
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDrop={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex={0}
+>
+  <input
+    multiple={false}
+    onChange={[Function]}
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    tabIndex={-1}
+    type="file"
+  />
+  <p>
+    Click to Upload or Drag and Drop
+  </p>
+  <div
+    className="generic-image-input__image-container"
+  >
+    <button
+      className="generic-image-input__image-container__add-image"
+      type="button"
+    >
+      +
+    </button>
+    <svg
+      className="generic-image-input__image-container__image"
+    >
+      picture-icon.svg
+    </svg>
+  </div>
+  <p
+    className="generic-image-input__max-size"
+  >
+    5 MB limit
+  </p>
+  <br />
+</div>
+`;
+
+exports[`Matches previous GenericInput snapshot 1`] = `
+<div
+  className="generic-input"
+>
+  <p
+    className="generic-field__name"
+  >
+    Test Name
+  </p>
+  <input
+    className="generic-input__input"
+    placeholder="Test Placeholder"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Matches previous GenericInputParagarph snapshot 1`] = `
+Array [
+  <p
+    className="generic-field__name"
+  >
+    Test Title
+  </p>,
+  <textarea
+    className="generic-input-paragraph"
+    defaultValue="Test Default Value"
+    onChange={[Function]}
+  />,
+]
+`;
+
+exports[`Matches previous GenericParagraph snapshot 1`] = `
+Array [
+  <p
+    className="generic-field__name"
+  >
+    Test Title
+  </p>,
+  <p
+    className="generic-paragraph__container generic-paragraph undefined"
+    onClick={[Function]}
+  >
+    This is a test paragraph
+  </p>,
+]
+`;

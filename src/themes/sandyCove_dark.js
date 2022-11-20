@@ -1,0 +1,27 @@
+const sandyCoveThemeDark = {
+  "--color-primary": "#b09557",
+  "--accent-main": "var(--color-primary)",
+  "--color-primary-inverse": "white",
+  "--color-secondary": "#5e9fac",
+  "--color-secondary-inverse": "white",
+  "--color-tertiary": "#6abcab",
+  "--color-tertiary-inverse": "white",
+  "--color-warning": "#940019",
+  "--color-header": "var(--color-secondary)",
+  "--color-subheader": "var(--color-tertiary)",
+  "--color-text-basic": "white",
+  "--card-color": "#292929",
+  "--field-color": "#363636",
+  "--bg-opacity": "0.07",
+  "--bg-color": "#0e1314",
+  "--color-shadow": "#00000080",
+  "--color-inactive": "#332f1b",
+  "--color-inactive-alt": "white",
+  "--color-disabled": "#3c3c3c",
+  "--color-disabled-alt": "white",
+  "--outer-card-color": "#00000080",
+  "--color-outline": "#90909080",
+  "--map-marker-color": "#b09557",
+};
+
+export default sandyCoveThemeDark;

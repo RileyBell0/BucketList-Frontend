@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches previous snapshot 1`] = `
+Array [
+  <div
+    className="popup__background"
+    onClick="None"
+    style={
+      Object {
+        "zIndex": 998,
+      }
+    }
+  />,
+  <div
+    className="popup__container "
+    style={
+      Object {
+        "top": 0,
+        "zIndex": 999,
+      }
+    }
+  >
+    <div
+      className="deletion-modal__content"
+    >
+      <div
+        className="card deletion-modal"
+      >
+        <div>
+          <p
+            className="deletion-modal__text"
+          >
+            Are you sure you want to delete
+          </p>
+          <p
+            className="deletion-modal__text--highlight"
+          >
+             
+            Destination
+          </p>
+          <p
+            className="deletion-modal__text"
+          >
+            ?
+          </p>
+        </div>
+        <br />
+        <div
+          className="deletion-modal__buttons"
+        >
+          <div>
+            <button
+              className="generic-button undefined"
+              onClick="None"
+              style={
+                Object {
+                  "maxWidth": undefined,
+                }
+              }
+            >
+              Cancel
+            </button>
+          </div>
+          <div>
+            <button
+              className="generic-button generic-button--warning"
+              onClick="None"
+              style={
+                Object {
+                  "maxWidth": undefined,
+                }
+              }
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -1,0 +1,33 @@
+.loading {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.loading__text {
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: 10vw;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 500px) {
+  .loading__text {
+    font-size: 50px;
+  }
+}
+
+.loading__loading-icon {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 200px;
+  width: 50%;
+}

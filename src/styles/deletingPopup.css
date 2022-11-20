@@ -1,0 +1,30 @@
+.deleting-popup {
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+
+  box-sizing: border-box;
+}
+.deleting-popup--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--form-width);
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.deleting-popup--text {
+  margin: 0;
+}

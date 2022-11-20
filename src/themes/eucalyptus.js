@@ -1,0 +1,27 @@
+const eucalyptusTheme = {
+  "--color-primary": "#576d53",
+  "--accent-main": "var(--color-primary)",
+  "--color-primary-inverse": "white",
+  "--color-secondary": "#74896f",
+  "--color-secondary-inverse": "white",
+  "--color-tertiary": "#7d9883",
+  "--color-tertiary-inverse": "white",
+  "--color-warning": "#940019",
+  "--color-header": "var(--color-primary)",
+  "--color-subheader": "var(--color-secondary)",
+  "--color-text-basic": "black",
+  "--card-color": "#ffffff",
+  "--field-color": "white",
+  "--bg-opacity": "0.7",
+  "--bg-color": "#d6e2e7",
+  "--color-shadow": "#90909080",
+  "--color-inactive": "#808080",
+  "--color-inactive-alt": "white",
+  "--color-disabled": "#808080",
+  "--color-disabled-alt": "white",
+  "--outer-card-color": "#FFFFFFb0",
+  "--color-outline": "#90909080",
+  "--map-marker-color": "#576d53",
+};
+
+export default eucalyptusTheme;

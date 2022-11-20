@@ -1,0 +1,17 @@
+.page-content__body {
+  /* Fill available space */
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+
+  /* Forced space between edges and content */
+  padding: 20px 10px 40px 10px;
+
+  box-sizing: border-box;
+}
+
+.scroll-content {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-y: overlay;
+}

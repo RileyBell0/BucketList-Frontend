@@ -1,0 +1,28 @@
+/* Overall button styling */
+.welcome-button {
+  background: #ffffff00;
+  color: white;
+  margin: 0;
+  border: 2px solid #ffffff;
+  width: 120px;
+  padding: 7.5px;
+  border-radius: 7px;
+  font-weight: 400px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.welcome-button__home {
+  width: max-content;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.welcome-button:hover {
+  background-color: white;
+  color: #303030;
+}
+
+.welcome-button__loading:hover {
+  background-color: #ffffff00;
+  color: white;
+}

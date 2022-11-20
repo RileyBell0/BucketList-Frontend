@@ -1,0 +1,22 @@
+.filters-container {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  gap: 5px;
+}
+
+.filters-option {
+  flex: 1 0 34%;
+  margin-top: auto;
+}
+
+.filters__button--save {
+  width: 100%;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

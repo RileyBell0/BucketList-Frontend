@@ -1,0 +1,14 @@
+.card {
+  /* Card edges to occur at content edges */
+  background-color: var(--card-color);
+
+  /* border-radius and vertical-padding must be equal */
+  --page-content-body-bevel: 15px;
+  border-radius: var(--page-content-body-bevel);
+  padding: 20px;
+
+  /* Drop shadow */
+  box-shadow: 0 2px 4px 1px var(--color-shadow);
+  border: 1px solid var(--color-shadow);
+  box-sizing: border-box;
+}

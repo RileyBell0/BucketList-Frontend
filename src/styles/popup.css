@@ -1,0 +1,21 @@
+.popup__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 800;
+  pointer-events: all;
+}
+
+.popup__container {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  z-index: 801;
+}

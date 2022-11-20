@@ -1,0 +1,39 @@
+<svg id="eAGZbYwDW211" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <g transform="matrix(.863102 0 0 0.863104 20.5347 20.5344)">
+    
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 150 30)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.875s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 235 65.000001)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 270 150)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.625s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 235.000001 235)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 150 270)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.375s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 65 235)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 30 150)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.125s" repeatCount="indefinite"/>
+    </ellipse>
+
+
+    <ellipse rx="37.5" ry="37.5" transform="matrix(.8 0 0 0.8 65 65)" stroke-width="0">
+      <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"/>
+    </ellipse>
+
+  </g>
+</svg>

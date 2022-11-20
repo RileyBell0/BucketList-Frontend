@@ -1,0 +1,27 @@
+.login__header {
+  font-size: 40px;
+}
+
+.login__form__input:focus {
+  outline: none;
+}
+
+.login__form__text-button {
+  background: none;
+  border: 0px;
+  color: var(--color-secondary);
+}
+
+.login__form__text-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login__error-message {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.login__link-to-sign-up {
+  max-width: 300px;
+}

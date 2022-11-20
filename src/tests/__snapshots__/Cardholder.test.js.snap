@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches previous snapshot 1`] = `
+<div
+  className="spacer "
+>
+  This is where the card goes
+</div>
+`;

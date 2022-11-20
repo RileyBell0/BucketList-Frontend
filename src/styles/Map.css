@@ -1,0 +1,26 @@
+.map-container {
+  position: fixed;
+  top: 67px;
+  min-height: 0;
+  height: calc(100vh - 67px);
+  max-height: calc(100vh - 67px);
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.map__navbar {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  z-index: 700;
+}
+
+.map__page-bounds {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}

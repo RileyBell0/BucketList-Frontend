@@ -1,0 +1,8 @@
+.settings__section-header {
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+.settings__button--change-password {
+  max-width: 300px;
+}

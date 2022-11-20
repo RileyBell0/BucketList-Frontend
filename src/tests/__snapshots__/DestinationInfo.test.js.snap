@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches previous snapshot 1`] = `
+Array [
+  <div
+    className="popup__background"
+    style={
+      Object {
+        "zIndex": 800,
+      }
+    }
+  />,
+  <div
+    className="popup__container "
+    style={
+      Object {
+        "top": 0,
+        "zIndex": 801,
+      }
+    }
+  >
+    <div
+      className="item-popup__content"
+    >
+      <div
+        className="card item-popup__content__card"
+      >
+        <h1
+          className="item-popup__content_name"
+        >
+          Item Name
+        </h1>
+        <h2>
+          Item City
+          , 
+          Item Country
+        </h2>
+        <br />
+        <div
+          className="item-popup__content_image-container"
+        >
+          <img
+            alt="destination"
+            className="item-popup__content__image"
+            src="img.link"
+          />
+        </div>
+        <h3>
+          Item Type
+           - 
+          None
+        </h3>
+        <p
+          className="generic-paragraph__container generic-paragraph item-popup__content__description"
+          defaultValue="No description was provided"
+          onClick={[Function]}
+        >
+          Item Desc
+        </p>
+        <br />
+        <div
+          className="item-popup__icons"
+        >
+          <div
+            className="item-popup__icons__icon--container"
+            onClick={[Function]}
+          >
+            <button
+              className="item-popup__icons__icon"
+            >
+              <svg
+                className="item-popup__icons__icon--edit"
+              >
+                edit.svg
+              </svg>
+            </button>
+            <p
+              className="item-popup__icons__icon--text"
+            >
+              Edit Destination
+            </p>
+          </div>
+          <div
+            className="item-popup__icons__icon--container"
+            onClick={[Function]}
+          >
+            <button
+              className="item-popup__icons__icon"
+            >
+              <svg
+                className="item-popup__icons__icon--delete"
+              >
+                delete.svg
+              </svg>
+            </button>
+            <p
+              className="item-popup__icons__icon--text"
+            >
+              Delete
+            </p>
+          </div>
+        </div>
+        <br />
+        <div>
+          <button
+            className="generic-button undefined"
+            style={
+              Object {
+                "maxWidth": undefined,
+              }
+            }
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

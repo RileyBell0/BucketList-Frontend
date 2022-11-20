@@ -1,0 +1,405 @@
+/*
+ * General elements for templates
+*/
+.templates__row--spaced {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  gap: 10px;
+}
+.templates__text-area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  gap: 5px;
+}
+.templates__header {
+  border-radius: 1000px;
+  min-height: 0;
+  width: 100%;
+  height: 25px;
+  max-height: 25px;
+}
+.templates__subheader {
+  border-radius: 1000px;
+  min-height: 0;
+  width: 100%;
+  height: 19px;
+  max-height: 19px;
+}
+.templates__paragraph {
+  border-radius: 1000px;
+  min-height: 0;
+  width: 100%;
+  height: 15px;
+  max-height: 15px;
+}
+.templates__center-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.templates__icon-button {
+  min-width: 24px;
+  width: 24px;
+  max-width: 24px;
+  min-height: 24px;
+  height: 24px;
+  max-height: 24px;
+  border-radius: 10px;
+}
+.templates__last-line {
+  width: 80% !important;
+}
+.templates__generic-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 61px;
+  max-height: 61px;
+}
+.templates__generic-input__title {
+  margin-bottom: 2px;
+  margin-top: 7px;
+  height: 20px;
+  width: 100px;
+  border-radius: 7px;
+}
+.templates__generic-input__field {
+  height: 30px;
+  width: 100%;
+  padding: 1px;
+  border-radius: 7px;
+}
+.templates__wide-toggle {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  min-height: 37px;
+  height: 37px;
+  max-height: 37px;
+}
+.templates__trip__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+@media screen and (max-width: 582px) {
+  .templates__trip__buttons {
+    justify-content: center;
+  }
+}
+.templates__trip__delete-button {
+  min-width: 0;
+  width: 100%;
+  max-width: 250px;
+  height: 32px;
+  border-radius: 5px;
+}
+.templates__trip__add-dest-button {
+  min-width: 0;
+  width: 100%;
+  max-width: 250px;
+  height: 32px;
+  border-radius: 5px;
+}
+.templates__trip__item-list {
+  gap: 25px !important;
+}
+.templates__trip__home-button {
+  min-width: 0;
+  width: 100%;
+  max-width: 250px;
+  min-height: 31.2px;
+  height: 31.2px;
+  max-height: 31.2px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Destination Template
+*/
+.templates__destination__header {
+  height: 51px !important;
+  max-height: 51px !important;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.templates__destination__subheader {
+  height: 37px !important;
+  max-height: 37px !important;
+  width: 90% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.templates__destination__image {
+  width: 100%;
+  height: 207px;
+  max-height: 207px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.templates__destination__icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  max-height: 82px;
+  width: 100%;
+  max-width: 100%;
+}
+.templates__destination__icons__icon--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 4px;
+  margin-top: 10px;
+  max-height: 82px;
+}
+.templates__destination__icons__icon--container--map {
+  width: 98px;
+  max-width: 98px;
+}
+.templates__destination__icons__icon--container--delete {
+  width: 49px;
+  max-width: 49px;
+}
+.templates__destination__icons__icon {
+  width: 100%;
+  min-height: 40px;
+  height: 40px;
+  max-height: 40px;
+  margin: 0;
+  border-radius: 10px;
+}
+.templates__destination__icons__icon--text {
+  width: 100%;
+  min-height: 20px;
+  height: 20px;
+  max-height: 20px;
+  margin: 0;
+  border-radius: 10px;
+}
+.templates__destination__button--visited {
+  width: 100%;
+  margin-top: 44px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  min-height: 32px;
+  height: 32px;
+  max-height: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.templates__destination__button--home {
+  width: 100%;
+  max-width: 300px;
+  min-height: 32px;
+  height: 32px;
+  max-height: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+/*
+ * item card template
+*/
+.templates__item-card {
+  display: flex;
+  flex-direction: row;
+  height: 122px;
+  gap: 10px;
+  pointer-events: all;
+}
+.templates__item-card--mobile {
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  height: 194px;
+  width: 100%;
+}
+.templates__item-card__title {
+  width: 60%;
+  max-width: 60%;
+}
+.templates__item-card__location {
+  width: 40%;
+  max-width: 40%;
+}
+.templates__item-card__image {
+  width: 100px;
+  max-width: 100px;
+  min-width: 100px;
+  height: 80px;
+  max-height: 80px;
+  min-height: 80px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.templates__item-card__image--mobile {
+  min-width: 80px;
+  width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  height: 80px;
+  max-height: 80px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  align-self: center;
+}
+.templates__item-card__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
+.templates__item-card__buttons--mobile {
+  width: 100%;
+}
+.templates__item-card__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+.templates__item-card--mobile__header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  height: 90px;
+  max-height: 90px;
+}
+.templates__item-card__header {
+  max-height: 18px;
+  height: 18px;
+  min-height: 0;
+  border-radius: 100px;
+}
+.templates__item-card__desc {
+  gap: 4px;
+}
+.templates__item-card__icon-button__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+}
+.templates__icon-button__desc--map {
+  min-width: 0;
+  width: 98px;
+  max-width: 98px;
+  min-height: 19.19px;
+  border-radius: 100px;
+}
+.templates__icon-button__desc--delete {
+  min-width: 0;
+  width: 49px;
+  max-width: 49px;
+  min-height: 19.19px;
+  border-radius: 100px;
+}
+
+/*
+ * Trip Card Template
+*/
+.templates__trip-card__header {
+  gap: 10px;
+}
+
+/* 
+ * Trip Page Template
+*/
+.templates__trip__spacer {
+  gap: 40px !important;
+}
+.templates__trip__header {
+  min-height: 51px !important;
+  height: 51px !important;
+  max-height: 51px !important;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.templates__trip__completion {
+  min-height: 23px !important;
+  height: 23px !important;
+  max-height: 23px !important;
+  width: 100% !important;
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Animation
+*/
+.templates__icon-button__desc--map,
+.templates__icon-button__desc--delete,
+.templates__item-card__header,
+.templates__trip__home-button,
+.templates__trip__add-dest-button,
+.templates__trip__delete-button,
+.templates__wide-toggle,
+.templates__trip__header,
+.templates__item-card__image,
+.templates__item-card__image--mobile,
+.templates__header,
+.templates__subheader,
+.templates__paragraph,
+.template__div-background,
+.templates__icon-button,
+.templates__destination__image,
+.templates__generic-input__title,
+.templates__generic-input__field,
+.templates__destination__icons__icon,
+.templates__destination__icons__icon--text,
+.templates__destination__button--visited,
+.templates__destination__button--home {
+  background-color: var(--card-color);
+  animation: load 1.5s infinite alternate-reverse ease-in-out;
+}
+@keyframes load {
+  100% {
+    background-color: var(--color-outline);
+  }
+}

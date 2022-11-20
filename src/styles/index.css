@@ -1,0 +1,84 @@
+:root {
+  /* General color palette */
+  --color-primary: #3c006b;
+  --accent-main: var(--color-primary);
+  --color-primary-inverse: white;
+  --color-secondary: #6800b8;
+  --color-secondary-inverse: white;
+  --color-tertiary: #6800b8;
+  --color-tertiary-inverse: white;
+  --color-warning: #940019;
+  --color-inactive: #808080;
+  --color-inactive-alt: white;
+  --color-disabled: #808080;
+  --color-disabled-alt: white;
+
+  /* Text styling */
+  --color-header: var(--color-primary);
+  --color-subheader: var(--color-secondary);
+  --color-text-basic: black;
+
+  /* Special elements */
+  --card-color: #ffffff;
+  --outer-card-color: #ffffff80;
+  --field-color: white;
+  --color-outline: #90909080;
+  --map-marker-color: var(--color-primary);
+
+  /* Background */
+  --bg-opacity: 0.7;
+  --bg-file: url("../images/world-map-light.png");
+  --bg-color: #f3e9ff;
+
+  /* misc */
+  --color-shadow: #90909080;
+
+  /* General properties (UNRELATED TO THEMES) */
+  --welcome-bg-file: url("../images/welcome-bg-purple.jpg");
+  --card-gap: 15px;
+  --font-family: Inter;
+  --responsive-width: 650px;
+  --form-width: 500px;
+}
+
+html {
+  height: 100%;
+  overflow-y: overlay;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: var(--color-header);
+}
+
+h2 {
+  color: var(--color-subheader);
+}
+
+h3 {
+  color: var(--color-subheader);
+}
+
+p {
+  color: var(--color-text-basic);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.formContent {
+  width: 100%;
+  max-width: var(--form-width);
+  margin-left: auto;
+  margin-right: auto;
+}

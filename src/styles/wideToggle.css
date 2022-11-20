@@ -1,0 +1,38 @@
+.wide-toggle--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wide-toggle {
+  color: var(--color-inactive-alt);
+  background-color: var(--color-inactive);
+  font-weight: bold;
+  width: 50%;
+  padding: 10px 0 10px 0;
+  font-size: 0.85em !important;
+}
+.wide-toggle:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+.wide-toggle--active {
+  color: var(--color-primary-inverse);
+  background-color: var(--color-primary);
+}
+.wide-toggle--active:hover {
+  filter: brightness(100%);
+  cursor: default;
+}
+
+.wide-toggle--right {
+  border-radius: 0 10px 10px 0;
+  border: 1px solid var(--color-primary);
+}
+
+.wide-toggle--left {
+  border-radius: 10px 0 0 10px;
+  border: 1px solid var(--color-primary);
+  border-right: none;
+}

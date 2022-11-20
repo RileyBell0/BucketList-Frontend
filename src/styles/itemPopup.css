@@ -1,0 +1,145 @@
+.item-popup__container {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  z-index: 803;
+}
+
+.item-popup__content_name {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.item-popup__content__buttons__button {
+  stroke: var(--color-header);
+  fill: var(--color-header);
+}
+.item-popup__content_image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  height: 300px;
+  max-height: 300px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 650px) {
+  .item-popup__content_image-container {
+    min-height: 40vw;
+    height: 40vw;
+    max-height: 40vw;
+  }
+}
+.item-popup__content__image {
+  align-self: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.item-popup__content__description {
+  text-align: center !important;
+}
+
+.item-popup__content {
+  pointer-events: none;
+
+  /* Fill available space */
+  width: 90%;
+  max-width: 500px;
+
+  /* Forced space between edges and content */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* Center the div */
+  margin-left: auto;
+  margin-right: auto;
+
+  box-sizing: border-box;
+}
+
+.item-popup__content__card {
+  pointer-events: all;
+}
+
+.item-popup__icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  fill: var(--color-tertiary);
+  stroke: var(--color-tertiary);
+}
+
+.item-popup__icons__icon--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  max-width: max-content;
+  gap: 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 4px;
+  margin-top: 10px;
+}
+.item-popup__icons__icon--container:hover {
+  filter: brightness(90%);
+  border: 2px dashed var(--color-outline);
+  background-color: var(--card-color);
+  cursor: pointer;
+}
+
+.item-popup__icons__icon {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: hidden;
+  min-width: 0;
+  width: 100%;
+  max-width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+}
+.item-popup__icons__icon--text {
+  pointer-events: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.item-popup__icons__icon--edit {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.item-popup__icons__icon--delete {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}

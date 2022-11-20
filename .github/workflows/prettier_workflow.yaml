@@ -1,0 +1,22 @@
+name: Code Formatting
+on: [push]
+jobs:
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rutajdash/prettier-cli-action@v1.0.0
+        id: prettier-run
+        with:
+          config_path: ./.prettierrc.yaml
+          file_pattern: '.'
+
+      # This step only runs if prettier finds errors causing the previous step to fail
+      # This steps lists the files where errors were found
+      - name: Prettier Output
+        if: ${{ failure() }}
+        shell: bash
+        run: |
+          echo "The following files are not formatted:"
+          echo "${{steps.prettier-run.outputs.prettier_output}}"

@@ -1,0 +1,55 @@
+.deletion-modal__background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 900;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+}
+
+.deletion-modal__content {
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+
+  box-sizing: border-box;
+}
+
+.deletion-modal {
+  pointer-events: all;
+  width: 100%;
+  max-width: 250px;
+
+  /* Center the div */
+  margin-left: auto;
+  margin-right: auto;
+
+  box-sizing: border-box;
+
+  z-index: 901;
+}
+
+.deletion-modal__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.deletion-modal__text {
+  display: inline;
+}
+
+.deletion-modal__text--highlight {
+  display: inline;
+  color: var(--color-header);
+}
