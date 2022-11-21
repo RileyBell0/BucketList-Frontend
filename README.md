@@ -72,7 +72,7 @@ This is a summarised version, not all files are shown below.
 REACT_APP_MAPS_API_KEY=<APIkey>
  ```
  
- - Where:
+ - Where: 
 	 - backendUrl: is the url where the backend is being hosted *(note that the backend url should be the subdomain of the reverse proxy. See backend README for more details)*
 	 - APIkey: is the key obtained from google API https://developers.google.com/maps
 
