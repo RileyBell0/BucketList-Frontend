@@ -1,12 +1,22 @@
 import React from "react";
 import "../styles/welcomeButton.css";
 
-function Welcome_Button({ className, children }) {
+function WelcomeButton({ className, children, loading, onClick }) {
   return (
     <>
-      <p className={"welcome-button " + className}>{children}</p>
+      <div className="welcome-button" onClick={onClick}>
+        <p
+          className={
+            "welcome-button__text " +
+            className +
+            (loading ? " welcome-button__loading" : "")
+          }
+        >
+          {children}
+        </p>
+      </div>
     </>
   );
 }
 
-export default Welcome_Button;
+export default WelcomeButton;

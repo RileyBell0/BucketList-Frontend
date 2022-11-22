@@ -34,7 +34,7 @@
   --color-shadow: #90909080;
 
   /* General properties (UNRELATED TO THEMES) */
-  --welcome-bg-file: url("../images/welcome-bg-purple.jpg");
+  --welcome-bg-file: url("../images/welcome-bg.jpg");
   --card-gap: 15px;
   --font-family: Inter;
   --responsive-width: 650px;
