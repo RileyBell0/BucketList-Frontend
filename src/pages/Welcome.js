@@ -13,45 +13,44 @@ function Welcome() {
 
   return (
     <>
-      <div className="welcome__bg">
-        <div className="welcome__content">
-          <div>
-            <h1 className="welcome__content__header">Bucket List</h1>
-            <h1 className="welcome__content__subheader">Destination Tracker</h1>
-          </div>
-          {loadedAuth && (
-            <>
-              {authenticated === false && (
-                <>
-                  <div className="welcome__content__buttons">
-                    <WelcomeButton onClick={() => navigate("/login")}>
-                      Log In
-                    </WelcomeButton>
-                    <WelcomeButton onClick={() => navigate("/signup")}>
-                      Sign Up
-                    </WelcomeButton>
-                  </div>
-                </>
-              )}
-              {authenticated && (
+      <div className="welcome__bg" />
+      <div className="welcome__content">
+        <div>
+          <h1 className="welcome__content__header">Bucket List</h1>
+          <h1 className="welcome__content__subheader">Destination Tracker</h1>
+        </div>
+        {loadedAuth && (
+          <>
+            {authenticated === false && (
+              <>
                 <div className="welcome__content__buttons">
-                  <WelcomeButton onClick={() => navigate("/destinations")}>
-                    My Destinations
+                  <WelcomeButton onClick={() => navigate("/login")}>
+                    Log In
+                  </WelcomeButton>
+                  <WelcomeButton onClick={() => navigate("/signup")}>
+                    Sign Up
                   </WelcomeButton>
                 </div>
-              )}
-            </>
-          )}
-          {loadedAuth === false && (
-            <>
+              </>
+            )}
+            {authenticated && (
               <div className="welcome__content__buttons">
-                <WelcomeButton className="welcome-button welcome-button__loading">
-                  Loading...
+                <WelcomeButton onClick={() => navigate("/destinations")}>
+                  My Destinations
                 </WelcomeButton>
               </div>
-            </>
-          )}
-        </div>
+            )}
+          </>
+        )}
+        {loadedAuth === false && (
+          <>
+            <div className="welcome__content__buttons">
+              <WelcomeButton className="welcome-button welcome-button__loading">
+                Loading...
+              </WelcomeButton>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
