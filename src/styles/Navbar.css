@@ -1,6 +1,31 @@
+.navbar__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar__background {
+  background: var(--color-primary);
+  position: sticky;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+  z-index: 700;
+  border-radius: 300px;
+  border: 2px solid var(--color-primary-inverse);
+  box-sizing: border-box;
+}
+
 .navbar {
   --navbar-height: 35px;
-  --navbar-vpadding: 16px;
+  --navbar-vpadding: 10px;
 
   color: var(--color-primary-inverse);
   display: flex;
@@ -12,15 +37,6 @@
   padding: var(--navbar-vpadding) 0;
   align-items: center;
   height: var(--navbar-height);
-}
-
-.navbar__background {
-  background-color: var(--color-primary);
-  position: sticky;
-  width: 100%;
-  max-width: 100%;
-  top: 0;
-  z-index: 700;
 }
 
 .navbar--mobile {

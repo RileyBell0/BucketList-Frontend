@@ -106,7 +106,7 @@ function Navbar() {
 
   const generateDesktop = () => {
     return (
-      <header className="navbar">
+      <div className="navbar">
         {authenticated && (
           <Link className="navbar__title" to="/destinations">
             Bucket List
@@ -119,7 +119,7 @@ function Navbar() {
         )}
         {authenticated && generateLinks(false)}
         {authenticated === false && generateUnauthenticatedLinks(false)}
-      </header>
+      </div>
     );
   };
 
@@ -160,13 +160,15 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar__background">
-        <MediaQuery minWidth={Globals.responsiveWidth + 1}>
-          {generateDesktop()}
-        </MediaQuery>
-        <MediaQuery maxWidth={Globals.responsiveWidth}>
-          {generateMobile()}
-        </MediaQuery>
+      <div className="navbar__container">
+        <div className="navbar__background">
+          <MediaQuery minWidth={Globals.responsiveWidth + 1}>
+            {generateDesktop()}
+          </MediaQuery>
+          <MediaQuery maxWidth={Globals.responsiveWidth}>
+            {generateMobile()}
+          </MediaQuery>
+        </div>
       </div>
       <Outlet />
     </>
