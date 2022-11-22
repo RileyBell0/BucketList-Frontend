@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import backendFetch from "../axios/backendFetch";
-import { themes, darkThemes, themeIcon, themeNames } from "./ThemeIndex";
+import { themes, darkThemes, themeNames } from "./ThemeIndex";
 import defaultTheme from "./default";
 import Globals from "../Globals";
 import { useEffect } from "react";
@@ -58,12 +58,6 @@ function loadUserTheme(themeName) {
   // Set all theme variables
   for (let key in themeDict) {
     document.documentElement.style.setProperty(key, themeDict[key]);
-  }
-
-  // Set the favicon
-  const favicon = document.getElementById("favicon");
-  if (favicon) {
-    favicon.href = themeIcon[themeName].small;
   }
 }
 
@@ -123,6 +117,7 @@ function refreshTheme() {
 // Get the user's theme, and load it
 function ThemeLoader() {
   const { authenticated } = useAuth();
+
   // Pre-emptively load the stored theme
   loadUserTheme(localStorage.getItem("theme"));
 
