@@ -7,7 +7,7 @@ import { ReactComponent as Cross } from "../images/hamburger_close.svg";
 import Globals from "../Globals";
 import { useAuth } from "../auth/auth";
 
-function Navbar() {
+function Navbar({ children, transparent, fixed }) {
   const [hamburgerActive, setHamburgerActive] = useState(false);
   const { authenticated, handleLogout } = useAuth();
 
@@ -160,8 +160,20 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar__container">
-        <div className="navbar__background">
+      <div
+        className={
+          fixed === false
+            ? "navbar__container"
+            : "navbar__container navbar__container--fixed"
+        }
+      >
+        <div
+          className={
+            transparent
+              ? "navbar__background"
+              : "navbar__background navbar__background--transparent"
+          }
+        >
           <MediaQuery minWidth={Globals.responsiveWidth + 1}>
             {generateDesktop()}
           </MediaQuery>
@@ -170,7 +182,9 @@ function Navbar() {
           </MediaQuery>
         </div>
       </div>
-      <Outlet />
+      {fixed !== false && <div className="navbar__padding" />}
+
+      {children}
     </>
   );
 }

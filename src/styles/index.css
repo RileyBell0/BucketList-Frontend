@@ -1,4 +1,7 @@
 :root {
+  /* Globals */
+  --navbar-height: 70px;
+
   /* General color palette */
   --color-primary: #3c006b;
   --accent-main: var(--color-primary);

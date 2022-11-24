@@ -1,17 +1,24 @@
+.welcome__globals {
+  --welcome--image--height: 700px;
+}
+
 /* Overall Page Style */
 .welcome__bg {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+
   width: 100%;
-  margin: 0;
+  height: var(--welcome--image--height);
+  max-height: var(--welcome--image--height);
+
   background-image: var(--welcome-bg-file);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
+  background-position: left;
   background-size: cover;
+
   z-index: -999;
-  max-height: 1080px;
 }
 
 /* General placement of container of main content */
@@ -19,60 +26,36 @@
   display: flex;
   flex-direction: column;
   gap: 100px;
-  padding-top: 125px;
-  height: 100%;
-  max-height: 1080px;
+
+  height: calc(var(--welcome--image--height) - var(--navbar-height));
   min-width: 0;
   width: 100%;
   max-width: 100%;
+
+  margin: 0;
+  padding-top: 40px;
   box-sizing: border-box;
 }
 
-#welcome__content__text-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 8px;
-  text-align: left;
-}
-
-#welcome__content__image-attribution {
-  opacity: 0.6;
-  width: 100vw;
-  max-width: 100%;
-  font-size: 3vw;
-  color: white;
-  font-size: 1rem;
-  text-align: left;
-  padding: 0;
-  display: inline;
-  margin: 0;
-  text-align: center;
-}
-.welcome__text--link {
-  text-decoration: underline;
-  cursor: pointer;
-}
 .welcome__content__header {
+  color: white;
+
+  text-align: center;
+  font-size: 9.6rem;
+
   padding: 0;
   margin: 0;
-  color: white;
-  margin: 0px;
-  font-size: 9.6rem;
-  text-align: left;
-  margin-bottom: -10px;
-  text-align: center;
 }
 
 .welcome__content__subheader {
+  color: white;
+
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: normal;
+
   padding: 0;
   margin: 0;
-  color: white;
-  margin: 0px;
-  font-size: 3.6rem;
-  text-align: left;
-  font-weight: normal;
-  text-align: center;
 }
 
 @media screen and (min-width: 725px) and (max-width: 832px) {
@@ -102,24 +85,25 @@
     margin-left: -0.085em;
   }
 }
+
 .welcome__content__buttons {
-  margin: 0;
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
   gap: 15px;
+
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 335px) {
   .welcome__content__buttons {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 15px;
   }
 }
