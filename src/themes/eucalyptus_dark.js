@@ -1,10 +1,10 @@
-const oceanThemeDark = {
-  "--color-primary": "#142350",
+const eucalyptusDark = {
+  "--color-primary": "#495c46",
   "--accent-main": "var(--color-primary)",
   "--color-primary-inverse": "white",
-  "--color-secondary": "#4f85a6",
-  "--color-secondary-inverse": "#161616",
-  "--color-tertiary": "#4b989b",
+  "--color-secondary": "#7aa76f",
+  "--color-secondary-inverse": "white",
+  "--color-tertiary": "#84a95a",
   "--color-tertiary-inverse": "white",
   "--color-warning": "#940019",
   "--color-header": "var(--color-secondary)",
@@ -12,16 +12,16 @@ const oceanThemeDark = {
   "--color-text-basic": "white",
   "--card-color": "#292929",
   "--field-color": "#363636",
-  "--bg-opacity": "0.05",
-  "--bg-color": "#080d14",
+  "--bg-opacity": "0.07",
+  "--bg-color": "#101510",
   "--color-shadow": "#00000080",
-  "--color-inactive": "#405477",
+  "--color-inactive": "#27331b",
   "--color-inactive-alt": "white",
   "--color-disabled": "#3c3c3c",
   "--color-disabled-alt": "white",
   "--outer-card-color": "#00000080",
   "--color-outline": "#90909080",
-  "--map-marker-color": "#4f85a6",
+  "--map-marker-color": "#495c46",
 };
 
-export default oceanThemeDark;
+export default eucalyptusDark;

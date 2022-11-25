@@ -1,25 +1,21 @@
 import defaultTheme from "./default";
 import defaultDark from "./default_dark";
-import ocean from "./ocean";
-import oceanDark from "./ocean_dark";
-import purple from "./purple";
-import purpleDark from "./purple_dark";
+import eucalyptus from "./eucalyptus";
+import eucalyptusDark from "./eucalyptus_dark";
 import sandyCove from "./sandyCove";
 import sandyCoveDark from "./sandyCove_dark";
 
-const themeNames = ["Default", "Ocean", "Purple", "Sandy Cove"];
+const themeNames = ["Default", "Eucalyptus", "Sandy Cove"];
 
 const themes = {
   default: defaultTheme,
-  ocean: ocean,
-  purple: purple,
+  eucalyptus: eucalyptus,
   "sandy cove": sandyCove,
 };
 
 const darkThemes = {
   default: defaultDark,
-  ocean: oceanDark,
-  purple: purpleDark,
+  eucalyptus: eucalyptusDark,
   "sandy cove": sandyCoveDark,
 };
 

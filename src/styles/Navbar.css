@@ -9,8 +9,8 @@
   align-items: center;
   padding-top: 10px;
   padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   height: var(--navbar-height);
   width: 100%;
   box-sizing: border-box;
@@ -27,13 +27,13 @@
   height: 100%;
   top: 0;
   z-index: 700;
-  border-radius: 300px;
+  border-radius: var(--standard-border-radius);
   box-sizing: border-box;
 }
 
 .navbar__background--transparent {
   background: var(--color-primary);
-  border: 2px solid var(--color-primary-inverse);
+  box-sizing: border-box;
 }
 
 .navbar {
@@ -57,13 +57,13 @@
 }
 
 .navbar-dropdown-mobile {
-  position: absolute;
-  top: var(--navbar-height);
-  left: 0;
   width: 100%;
   background-color: var(--color-primary);
   z-index: 701;
   padding: 10px 0 20px 0;
+  border: 2px solid var(--color-primary-inverse);
+  border-radius: var(--standard-border-radius);
+  box-sizing: border-box;
 }
 
 .navbar__hamburger-button {

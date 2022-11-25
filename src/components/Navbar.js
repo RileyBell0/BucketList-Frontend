@@ -125,27 +125,29 @@ function Navbar({ children, transparent, fixed }) {
 
   const generateMobile = () => {
     return (
-      <header className="navbar navbar--mobile">
-        {authenticated && (
-          <Link className="navbar__title" to="/destinations">
-            Bucket List
-          </Link>
-        )}
-        {authenticated === false && (
-          <Link className="navbar__title" to="/">
-            Bucket List
-          </Link>
-        )}
-        <button
-          className="navbar__mobile-button"
-          onClick={() => hamburgerClick()}
-        >
-          {hamburgerActive ? (
-            <Cross className="navbar__cross" />
-          ) : (
-            <Hamburger className="navbar__hamburger" />
+      <>
+        <header className="navbar navbar--mobile">
+          {authenticated && (
+            <Link className="navbar__title" to="/destinations">
+              Bucket List
+            </Link>
           )}
-        </button>
+          {authenticated === false && (
+            <Link className="navbar__title" to="/">
+              Bucket List
+            </Link>
+          )}
+          <button
+            className="navbar__mobile-button"
+            onClick={() => hamburgerClick()}
+          >
+            {hamburgerActive ? (
+              <Cross className="navbar__cross" />
+            ) : (
+              <Hamburger className="navbar__hamburger" />
+            )}
+          </button>
+        </header>
         {authenticated && hamburgerActive && (
           <div className="navbar-dropdown-mobile">{generateLinks(true)}</div>
         )}
@@ -154,7 +156,7 @@ function Navbar({ children, transparent, fixed }) {
             {generateUnauthenticatedLinks(true)}
           </div>
         )}
-      </header>
+      </>
     );
   };
 

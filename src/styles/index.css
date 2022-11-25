@@ -1,6 +1,7 @@
 :root {
   /* Globals */
   --navbar-height: 70px;
+  --standard-border-radius: 10px;
 
   /* General color palette */
   --color-primary: #3c006b;
