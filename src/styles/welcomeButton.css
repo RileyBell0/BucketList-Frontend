@@ -26,13 +26,13 @@
 .welcome-button__text:hover {
   cursor: pointer;
   background-color: white;
-  color: #303030;
+  color: var(--color-primary);
 }
 
 .welcome-button__loading:hover {
   cursor: default;
-  background-color: #442f5076;
-  color: white;
+  background-color: white;
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 440px) {

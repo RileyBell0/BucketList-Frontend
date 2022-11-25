@@ -20,6 +20,7 @@
 .wide-toggle--active {
   color: var(--color-primary-inverse);
   background-color: var(--color-primary);
+  text-decoration: underline;
 }
 .wide-toggle--active:hover {
   filter: brightness(100%);

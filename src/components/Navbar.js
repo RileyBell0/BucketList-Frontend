@@ -8,13 +8,28 @@ import Globals from "../Globals";
 import { useAuth } from "../auth/auth";
 
 function Navbar({ children, transparent, fixed }) {
-  const [hamburgerActive, setHamburgerActive] = useState(false);
   const { authenticated, handleLogout } = useAuth();
+  const [hamburgerActive, setHamburgerActive] = useState(false);
+  let navbarClass = "navbar";
+  let homeLink = "/";
+  if (transparent) {
+    navbarClass += " navbar--transparent";
+  }
+  if (authenticated) {
+    homeLink = "/destinations";
+  }
 
+  // Toggle the mobile dropdown on or off
   const hamburgerClick = () => {
     setHamburgerActive(!hamburgerActive);
   };
 
+  // Function for defining navlink styling when a page is active/inactive
+  const linkClass = ({ isActive }) => {
+    return "navbar__link" + (isActive ? " navbar__link--active" : "");
+  };
+
+  // Links visible in the navbar when unauthenticated
   const generateUnauthenticatedLinks = (isMobile) => {
     return (
       <div
@@ -22,34 +37,18 @@ function Navbar({ children, transparent, fixed }) {
           isMobile ? "navbar__links navbar__links--mobile" : "navbar__links"
         }
       >
-        <NavLink
-          to="/about"
-          className={(isActive) =>
-            isActive ? "navbar__link" : "navbar__link navbar__link--active"
-          }
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/signup"
-          className={(isActive) =>
-            isActive ? "navbar__link" : "navbar__link navbar__link--active"
-          }
-        >
+        <NavLink to="/signup" className={linkClass}>
           Sign Up
         </NavLink>
-        <NavLink
-          to="/login"
-          className={(isActive) =>
-            isActive ? "navbar__link" : "navbar__link navbar__link--active"
-          }
-        >
+        {isMobile && <div className="navbar__links--separator" />}
+        <NavLink to="/login" className={linkClass}>
           Log In
         </NavLink>
       </div>
     );
   };
 
+  // Links visible in the navbar authenticated
   const generateLinks = (isMobile) => {
     return (
       <div
@@ -57,46 +56,26 @@ function Navbar({ children, transparent, fixed }) {
           isMobile ? "navbar__links navbar__links--mobile" : "navbar__links"
         }
       >
-        <NavLink
-          to="/destinations"
-          className={({ isActive }) =>
-            "navbar__link" + (isActive ? " navbar__link--active" : "")
-          }
-        >
+        <NavLink to="/destinations" className={linkClass}>
           Destinations
         </NavLink>
-        <NavLink
-          to="/trips"
-          className={({ isActive }) =>
-            "navbar__link" + (isActive ? " navbar__link--active" : "")
-          }
-        >
+        {isMobile && <div className="navbar__links--separator" />}
+        <NavLink to="/trips" className={linkClass}>
           Trips
         </NavLink>
-        <NavLink
-          to="/map"
-          className={({ isActive }) =>
-            "navbar__link" + (isActive ? " navbar__link--active" : "")
-          }
-        >
+        {isMobile && <div className="navbar__links--separator" />}
+        <NavLink to="/map" className={linkClass}>
           Map
         </NavLink>
-        <NavLink
-          to="/help"
-          className={(isActive) =>
-            isActive ? "navbar__link" : "navbar__link navbar__link--active"
-          }
-        >
+        {isMobile && <div className="navbar__links--separator" />}
+        <NavLink to="/help" className={linkClass}>
           Help
         </NavLink>
-        <NavLink
-          to="/settings"
-          className={(isActive) =>
-            isActive ? "navbar__link" : "navbar__link navbar__link--active"
-          }
-        >
+        {isMobile && <div className="navbar__links--separator" />}
+        <NavLink to="/settings" className={linkClass}>
           Settings
         </NavLink>
+        {isMobile && <div className="navbar__links--separator" />}
         <Link onClick={handleLogout} to="/" className="navbar__link">
           Sign out
         </Link>
@@ -104,39 +83,45 @@ function Navbar({ children, transparent, fixed }) {
     );
   };
 
+  // Navbar contents on desktop
   const generateDesktop = () => {
     return (
-      <div className="navbar">
-        {authenticated && (
-          <Link className="navbar__title" to="/destinations">
-            Bucket List
-          </Link>
-        )}
-        {authenticated === false && (
-          <Link className="navbar__title" to="/">
-            Bucket List
-          </Link>
-        )}
-        {authenticated && generateLinks(false)}
-        {authenticated === false && generateUnauthenticatedLinks(false)}
+      <div className={navbarClass}>
+        <Link className="navbar__title" to={homeLink}>
+          Bucket List
+        </Link>
+
+        {authenticated
+          ? generateLinks(false)
+          : generateUnauthenticatedLinks(false)}
       </div>
     );
   };
 
+  const dropdown = (authenticated) => {
+    if (authenticated) {
+      return (
+        <div className="navbar-dropdown-mobile">{generateLinks(true)}</div>
+      );
+    }
+    return (
+      <div className="navbar-dropdown-mobile">
+        {generateUnauthenticatedLinks(true)}
+      </div>
+    );
+  };
+
+  // Navbar contents on Mobile
   const generateMobile = () => {
+    navbarClass += " navbar--mobile";
     return (
       <>
-        <header className="navbar navbar--mobile">
-          {authenticated && (
-            <Link className="navbar__title" to="/destinations">
-              Bucket List
-            </Link>
-          )}
-          {authenticated === false && (
-            <Link className="navbar__title" to="/">
-              Bucket List
-            </Link>
-          )}
+        <div className={navbarClass}>
+          <Link className="navbar__title" to={homeLink}>
+            Bucket List
+          </Link>
+
+          {/* Hamburguer menu button */}
           <button
             className="navbar__mobile-button"
             onClick={() => hamburgerClick()}
@@ -147,35 +132,26 @@ function Navbar({ children, transparent, fixed }) {
               <Hamburger className="navbar__hamburger" />
             )}
           </button>
-        </header>
-        {authenticated && hamburgerActive && (
-          <div className="navbar-dropdown-mobile">{generateLinks(true)}</div>
-        )}
-        {authenticated === false && hamburgerActive && (
-          <div className="navbar-dropdown-mobile">
-            {generateUnauthenticatedLinks(true)}
-          </div>
-        )}
+        </div>
+
+        {/* Displaying the mobile dropdown menu */}
+        {hamburgerActive && dropdown(authenticated)}
       </>
     );
   };
 
+  let overallClass = "navbar__container";
+  if (fixed !== false) {
+    overallClass += " navbar__container--fixed";
+  }
+  if (transparent) {
+    overallClass += " navbar__container--transparent";
+  }
+
   return (
     <>
-      <div
-        className={
-          fixed === false
-            ? "navbar__container"
-            : "navbar__container navbar__container--fixed"
-        }
-      >
-        <div
-          className={
-            transparent
-              ? "navbar__background"
-              : "navbar__background navbar__background--transparent"
-          }
-        >
+      <div className={overallClass}>
+        <div className="navbar__background">
           <MediaQuery minWidth={Globals.responsiveWidth + 1}>
             {generateDesktop()}
           </MediaQuery>
@@ -184,6 +160,7 @@ function Navbar({ children, transparent, fixed }) {
           </MediaQuery>
         </div>
       </div>
+
       {fixed !== false && <div className="navbar__padding" />}
 
       {children}
