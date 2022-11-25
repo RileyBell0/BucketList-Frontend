@@ -49,8 +49,8 @@ function AboutSection() {
       <PageContent>
         <h1>About Placeholder</h1>
         <br />
-        <p className="about__text--highlighted">Bucket List </p>
-        <p className="about__text">
+        <p className="welcome__about__text--highlighted">Bucket List </p>
+        <p className="welcome__about__text">
           was founded in 1202 by a small group of travel enthusiasts who
           discovered javascript engraved on a stone in their village.
           <br />
@@ -58,20 +58,23 @@ function AboutSection() {
           They wanted to make an easy way to plan what they wanted to do in
           their life and the destinations they wanted to visit.
         </p>
-        <p className="about__text">A </p>
-        <p className="about__text--highlighted">Bucket List </p>
-        <p className="about__text">
+        <p className="welcome__about__text">A </p>
+        <p className="welcome__about__text--highlighted">Bucket List </p>
+        <p className="welcome__about__text">
           is a list of experiences or achievements that you might want to
           accomplish during your lifetime.
           <br />
           <br />
         </p>
-        <p className="about__text--highlighted">BucketListApp.org </p>
-        <p className="about__text">
+        <p className="welcome__about__text--highlighted">BucketListApp.org </p>
+        <p className="welcome__about__text">
           will help you get done what you want most, by keeping track of all the
           things you've
         </p>
-        <p className="about__text--highlighted"> always wanted to do.</p>
+        <p className="welcome__about__text--highlighted">
+          {" "}
+          always wanted to do.
+        </p>
       </PageContent>
     </>
   );

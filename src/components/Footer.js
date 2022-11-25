@@ -16,10 +16,6 @@ function Footer({ children, textClass, footerClass }) {
         >
           <div className="footer__content">
             <Link to="/" className="footer__link">
-              <p className={text}>Welcome</p>
-            </Link>
-            <p className={text}> • </p>
-            <Link to="/about" className="footer__link">
               <p className={text}>About Us</p>
             </Link>
             {authenticated && (

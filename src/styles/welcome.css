@@ -1,6 +1,14 @@
 .welcome__globals {
   --welcome--image--height: 700px;
 }
+.welcome__about__text {
+  display: inline;
+  color: var(--color-text-basic);
+}
+.welcome__about__text--highlighted {
+  display: inline;
+  color: var(--color-subheader);
+}
 
 /* Overall Page Style */
 .welcome__bg {
