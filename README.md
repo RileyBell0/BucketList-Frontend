@@ -9,7 +9,7 @@ This is a summarised version, not all files are shown below.
 │       ├── npm_test_workflow.yaml
 │       └── prettier_workflow.yaml
 ├── public
-│   ├── default192.png
+│   ├── logo192.png
 │   ├── index.html
 ├── src
 │   ├── auth
