@@ -14,19 +14,6 @@
   gap: 20px;
   margin-top: 20px;
 }
-.destinations__trip-selector__buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.destinations__trip-selector__buttons__newdest {
-  width: max-content;
-}
-.destinations__trip-selector__buttons__newtrip {
-  width: max-content;
-}
 @media screen and (max-width: 336px) {
   .destinations__trip-selector {
     justify-content: center;

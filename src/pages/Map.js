@@ -255,6 +255,10 @@ function Map(props) {
                 east: 180,
               },
             },
+            fullscreenControl: false,
+            mapTypeControl: false,
+            streetViewControl: false,
+
             styles: mapStyle,
           }}
           zoom={2.8}
@@ -293,9 +297,7 @@ function MapPage() {
     <>
       <div className="map__page-bounds">
         <ThemeLoader />
-        <div className="map__navbar">
-          <Navbar />
-        </div>
+        <Navbar />
         <PageBackground />
         <Map />
       </div>

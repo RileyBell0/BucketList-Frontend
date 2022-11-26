@@ -1,28 +1,48 @@
 /* Overall button styling */
 .welcome-button {
-  background: #ffffff00;
-  color: white;
+  box-sizing: border-box;
   margin: 0;
-  border: 2px solid #ffffff;
-  width: 120px;
-  padding: 7.5px;
   border-radius: 7px;
-  font-weight: 400px;
-  font-size: 20px;
-  text-align: center;
 }
 
-.welcome-button__home {
+.welcome-button__text {
+  color: white;
+
+  min-width: 140px;
   width: max-content;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: max-content;
+
+  padding: 7.5px;
+  margin: 0;
+
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+
+  border-radius: 7px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
 }
-.welcome-button:hover {
+.welcome-button__text:hover {
+  cursor: pointer;
   background-color: white;
-  color: #303030;
+  color: var(--color-primary);
 }
 
 .welcome-button__loading:hover {
-  background-color: #ffffff00;
-  color: white;
+  cursor: default;
+  background-color: white;
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 440px) {
+  .welcome-button {
+    width: 100%;
+    max-width: 400px;
+  }
+  .welcome-button__text {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }

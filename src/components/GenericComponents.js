@@ -11,7 +11,11 @@ import LoadingIcon from "../components/LoadingIcon";
 
 function GenericInput(props) {
   return (
-    <div className="generic-input">
+    <div
+      className={
+        "generic-input" + (props.className ? " " + props.className : "")
+      }
+    >
       {/* Only draw a title if provided with one */}
       {props.title != null && (
         <p className="generic-field__name">{props.title}</p>
@@ -36,14 +40,21 @@ function GenericInput(props) {
   );
 }
 
-function GenericDropdown({ title, options, onChange, defaultOption, value }) {
+function GenericDropdown({
+  title,
+  options,
+  onChange,
+  defaultOption,
+  value,
+  className,
+}) {
   const options_rendered = options.map((option) => (
     <option key={option}>{option}</option>
   ));
 
   return (
     <>
-      <div>
+      <div className={className}>
         {/* Only draw a title if provided with one */}
         {title != null && <p className="generic-field__name">{title}</p>}
         <div className="generic-drop-down__container">

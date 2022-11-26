@@ -1,6 +1,6 @@
 const Globals = {
   apiRootUrl: process.env.REACT_APP_BACKEND_URL || "http://localhost:8080/",
-  responsiveWidth: 650,
+  responsiveWidth: 676,
   typeOptions: ["Dining", "Landmark", "Arts", "Nature", "Other"],
   sortOptionsDisplay: ["Date Created", "Name", "Continent", "Country", "City"],
   sortOptionsKey: ["createdAt", "name", "continent", "country", "city"],

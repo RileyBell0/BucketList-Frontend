@@ -1,4 +1,8 @@
 :root {
+  /* Globals */
+  --navbar-height: 70px;
+  --standard-border-radius: 10px;
+
   /* General color palette */
   --color-primary: #3c006b;
   --accent-main: var(--color-primary);
@@ -34,7 +38,8 @@
   --color-shadow: #90909080;
 
   /* General properties (UNRELATED TO THEMES) */
-  --welcome-bg-file: url("../images/welcome-bg-purple.jpg");
+  --welcome-bg-file: url("../images/welcome-bg.jpg");
+  --welcome-bg-dark-file: url("../images/welcome-bg-dark.jpg");
   --card-gap: 15px;
   --font-family: Inter;
   --responsive-width: 650px;

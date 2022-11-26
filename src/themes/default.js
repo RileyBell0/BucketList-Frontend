@@ -1,10 +1,10 @@
 const defaultTheme = {
-  "--color-primary": "#3c006b",
+  "--color-primary": "#107eac",
   "--accent-main": "var(--color-primary)",
   "--color-primary-inverse": "white",
-  "--color-secondary": "#6800b8",
+  "--color-secondary": "#529bb6",
   "--color-secondary-inverse": "white",
-  "--color-tertiary": "#6800b8",
+  "--color-tertiary": "#63d6de",
   "--color-tertiary-inverse": "white",
   "--color-warning": "#940019",
   "--color-header": "var(--color-primary)",
@@ -12,8 +12,8 @@ const defaultTheme = {
   "--color-text-basic": "black",
   "--card-color": "#ffffff",
   "--field-color": "white",
-  "--bg-opacity": "0.7",
-  "--bg-color": "#f0e7fa",
+  "--bg-opacity": "0.4",
+  "--bg-color": "#00598736",
   "--color-shadow": "#90909080",
   "--color-inactive": "#808080",
   "--color-inactive-alt": "white",
@@ -21,7 +21,7 @@ const defaultTheme = {
   "--color-disabled-alt": "white",
   "--outer-card-color": "#FFFFFFb0",
   "--color-outline": "#90909080",
-  "--map-marker-color": "#3c006b",
+  "--map-marker-color": "#576d53",
 };
 
 export default defaultTheme;

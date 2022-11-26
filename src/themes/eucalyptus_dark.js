@@ -1,4 +1,4 @@
-const eucalyptusThemeDark = {
+const eucalyptusDark = {
   "--color-primary": "#495c46",
   "--accent-main": "var(--color-primary)",
   "--color-primary-inverse": "white",
@@ -24,4 +24,4 @@ const eucalyptusThemeDark = {
   "--map-marker-color": "#495c46",
 };
 
-export default eucalyptusThemeDark;
+export default eucalyptusDark;

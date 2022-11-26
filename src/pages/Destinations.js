@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { ItemCardList } from "../components/ItemCards";
-import { ItemCardLoading } from "../components/Templates";
-import { ReactComponent as FiltersIcon } from "../images/filters.svg";
-import { Link, useSearchParams } from "react-router-dom";
 import "../styles/destinations.css";
 import "../styles/GenericComponents.css";
 import "../styles/filters.css";
+import React, { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import globals from "../Globals";
+import backendFetch from "../axios/backendFetch";
+import { ThemeLoader } from "../themes/Themes";
 import Navbar from "../components/Navbar";
+import { ItemCardList } from "../components/ItemCards";
+import { ItemCardLoading } from "../components/Templates";
+import { ReactComponent as FiltersIcon } from "../images/filters.svg";
+import PageContent from "../components/PageContent";
+import { DeletionModal } from "../components/DeletionModal";
+import PageBackground from "../components/PageBackground";
+import Footer from "../components/Footer";
+import WideToggle from "../components/WideToggle";
 import {
   GenericButton,
   GenericDropdown,
   GenericInput,
   GenericParagraph,
 } from "../components/GenericComponents";
-import backendFetch from "../axios/backendFetch";
-import PageContent from "../components/PageContent";
-import { ThemeLoader } from "../themes/Themes";
-import { DeletionModal } from "../components/DeletionModal";
-import globals from "../Globals";
-import PageBackground from "../components/PageBackground";
-import Footer from "../components/Footer";
-import WideToggle from "../components/WideToggle";
 
 function Destinations() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -268,16 +268,169 @@ function Destinations() {
     setDeletionModal(null);
   };
 
+  const FiltersToggle = () => {
+    return (
+      <button
+        className="filters"
+        onClick={() => {
+          if (filtersOpen) {
+            setFilters([]);
+            setFiltersOpen(false);
+          } else {
+            setFiltersOpen(true);
+          }
+        }}
+      >
+        <FiltersIcon className="filters__icon"></FiltersIcon>
+        <div className="filters__title">Filters:</div>
+        <div className="filters__enabled">
+          {filters.length === 0 && focussedTrip === "None"
+            ? "None"
+            : filters.length === 0
+            ? "Trip"
+            : "Enabled"}
+        </div>
+      </button>
+    );
+  };
+
+  const FilterSettings = (props) => {
+    if (!filtersOpen) {
+      return <></>;
+    }
+
+    return (
+      <>
+        <div className={"filters-container"}>
+          <GenericDropdown
+            className="filters-option"
+            value={itemType}
+            title={"Type"}
+            options={["Any"].concat(globals.typeOptions)}
+            onChange={(e) => setItemType(e.target.value)}
+          />
+          <GenericInput
+            className="filters-option"
+            value={name}
+            title={"Name contains"}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <GenericInput
+            className="filters-option"
+            value={location}
+            title={"Location contains"}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          {loadingTrips ? (
+            <GenericParagraph
+              title="Trip"
+              className="destinations__trip-selector__dropdown filters-option"
+            >
+              Loading trips info...
+            </GenericParagraph>
+          ) : (
+            <>
+              {trips && trips.length !== 0 ? (
+                <GenericDropdown
+                  className="filters-option"
+                  title="Trip"
+                  options={["All", "None"].concat(
+                    trips.map((location) => location.name)
+                  )}
+                  defaultOption={["All", "None"]
+                    .concat(trips.map((trip) => trip.name))
+                    .indexOf(focussedTrip)}
+                  onChange={(e) => {
+                    setFocussedTrip(e.target.value);
+                  }}
+                />
+              ) : (
+                <GenericParagraph title="Trip" className="filters-option">
+                  No trips yet...
+                </GenericParagraph>
+              )}
+            </>
+          )}
+          <GenericDropdown
+            className="filters-option"
+            title={"Sort By"}
+            options={globals.sortOptionsDisplay}
+            value={sortType}
+            onChange={(e) => setSortType(e.target.value)}
+          />
+          <GenericDropdown
+            className="filters-option"
+            title={"Sort Direction"}
+            options={["Ascending", "Descending"]}
+            value={sortDir}
+            onChange={(e) => setSortDir(e.target.value)}
+          />
+          <GenericDropdown
+            className="filters-option"
+            title={"Continent"}
+            options={["Any"].concat(globals.continentsList)}
+            value={continent}
+            onChange={(e) => setContinent(e.target.value)}
+          />
+          {/*Filler div so that the above option isn't twice as wide as all the others*/}
+        </div>
+        <GenericButton
+          onClick={() => {
+            let f = [
+              { key: "name", value: name, strict: false },
+              {
+                key: "compositeLocation",
+                value: location,
+                strict: false,
+              },
+            ];
+
+            if (itemType !== "Any") {
+              f = f.concat({
+                key: "type",
+                value: itemType,
+                strict: true,
+              });
+            }
+            if (continent !== "Any") {
+              f = f.concat({
+                key: "continent",
+                value: continent,
+                strict: true,
+              });
+            }
+
+            let filters = [];
+            for (let i in f) {
+              const filter = f[i];
+              if (filter.value !== "") {
+                filters.push(f[i]);
+              }
+            }
+
+            setUpdatedFilters(true);
+            setFilters(filters);
+            setSort({ type: sortType, direction: sortDir });
+          }}
+          className="filters__button--save"
+        >
+          Filter
+        </GenericButton>
+      </>
+    );
+  };
+
   return (
     <>
+      {deletionModal && (
+        <DeletionModal
+          itemName={deletionModal.name}
+          onDeletionModalCancel={onDeletionModalCancel}
+          onDeletionModalConfirmation={onDeletionModalConfirmation}
+        />
+      )}
+
       <div className="destinations-content">
-        {deletionModal && (
-          <DeletionModal
-            itemName={deletionModal.name}
-            onDeletionModalCancel={onDeletionModalCancel}
-            onDeletionModalConfirmation={onDeletionModalConfirmation}
-          />
-        )}
         <WideToggle
           state={visited}
           setState={setVisited}
@@ -286,64 +439,17 @@ function Destinations() {
             disabled: "Visited (" + visitedCount + ")",
           }}
         />
+
         <div className="destinations__trip-selector">
-          <button
-            className="filters"
-            onClick={() => {
-              if (filtersOpen) {
-                setFilters([]);
-                setFiltersOpen(false);
-              } else {
-                setFiltersOpen(true);
-              }
-            }}
-          >
-            <FiltersIcon className="filters__icon"></FiltersIcon>
-            <div className="filters__title">Filters:</div>
-            <div className="filters__enabled">
-              {filters.length === 0 && focussedTrip === "None"
-                ? "None"
-                : filters.length === 0
-                ? "Trip"
-                : "Enabled"}
-            </div>
-          </button>
-          <div className="destinations__trip-selector__buttons">
-            <Link to="/add_destination">
-              <GenericButton className="destinations__trip-selector__buttons__newdest">
-                New Destination
-              </GenericButton>
-            </Link>
-          </div>
+          <FiltersToggle />
+          <Link to="/add_destination">
+            <GenericButton>New Destination</GenericButton>
+          </Link>
         </div>
+
         <br />
-        {filtersOpen && (
-          <FilterSettings
-            filtersOpen={filtersOpen}
-            setFiltersOpen={setFiltersOpen}
-            filters={filters}
-            setFilters={setFilters}
-            loadingData={loadingTrips}
-            trips={trips}
-            focussedTrip={focussedTrip}
-            setFocussedTrip={setFocussedTrip}
-            itemType={itemType}
-            setItemType={setItemType}
-            name={name}
-            setName={setName}
-            location={location}
-            setLocation={setLocation}
-            setUpdatedFilters={setUpdatedFilters}
-            sortType={sortType}
-            setSortType={setSortType}
-            sortDir={sortDir}
-            setSortDir={setSortDir}
-            sort={sort}
-            setSort={setSort}
-            continent={continent}
-            setContinent={setContinent}
-          />
-        )}
+        <FilterSettings />
+
         {loadingDests ? (
           <>
             <div className="destinations__loading__item-card-list">
@@ -400,128 +506,6 @@ function sortItems(items, sortBy, sortDir) {
     return items;
   }
   return items;
-}
-
-function FilterSettings(props) {
-  return (
-    <>
-      <div className={"filters-container"}>
-        <div className={"filters-option"}>
-          <GenericDropdown
-            value={props.itemType}
-            title={"Type"}
-            options={["Any"].concat(globals.typeOptions)}
-            onChange={(e) => props.setItemType(e.target.value)}
-          />
-        </div>
-        <div className={"filters-option"}>
-          <GenericInput
-            value={props.name}
-            title={"Name contains"}
-            onChange={(e) => props.setName(e.target.value)}
-          />
-        </div>
-        <div className={"filters-option"}>
-          <GenericInput
-            value={props.location}
-            title={"Location contains"}
-            onChange={(e) => props.setLocation(e.target.value)}
-          />
-        </div>
-        <div className="filters-option">
-          {props.loadingData ? (
-            <GenericParagraph
-              title="Trip"
-              className="destinations__trip-selector__dropdown"
-            >
-              Loading trips info...
-            </GenericParagraph>
-          ) : (
-            <>
-              {props.trips && props.trips.length !== 0 ? (
-                <GenericDropdown
-                  title="Trip"
-                  options={["All", "None"].concat(
-                    props.trips.map((location) => location.name)
-                  )}
-                  defaultOption={["All", "None"]
-                    .concat(props.trips.map((trip) => trip.name))
-                    .indexOf(props.focussedTrip)}
-                  onChange={(e) => {
-                    props.setFocussedTrip(e.target.value);
-                  }}
-                />
-              ) : (
-                <GenericParagraph title="Trip">
-                  No trips yet...
-                </GenericParagraph>
-              )}
-            </>
-          )}
-        </div>
-        <div className={"filters-option"}>
-          <GenericDropdown
-            title={"Sort By"}
-            options={globals.sortOptionsDisplay}
-            value={props.sortType}
-            onChange={(e) => props.setSortType(e.target.value)}
-          />
-        </div>
-        <div className={"filters-option"}>
-          <GenericDropdown
-            title={"Sort Direction"}
-            options={["Ascending", "Descending"]}
-            value={props.sortDir}
-            onChange={(e) => props.setSortDir(e.target.value)}
-          />
-        </div>
-        <div className={"filters-option"}>
-          <GenericDropdown
-            title={"Continent"}
-            options={["Any"].concat(globals.continentsList)}
-            value={props.continent}
-            onChange={(e) => props.setContinent(e.target.value)}
-          />
-        </div>
-        {/*Filler div so that the above option isn't twice as wide as all the others*/}
-        <div className={"filters-option"} />
-      </div>
-      <GenericButton
-        onClick={() => {
-          let f = [
-            { key: "name", value: props.name, strict: false },
-            { key: "compositeLocation", value: props.location, strict: false },
-          ];
-
-          if (props.itemType !== "Any") {
-            f = f.concat({ key: "type", value: props.itemType, strict: true });
-          }
-          if (props.continent !== "Any") {
-            f = f.concat({
-              key: "continent",
-              value: props.continent,
-              strict: true,
-            });
-          }
-
-          let filters = [];
-          for (let i in f) {
-            const filter = f[i];
-            if (filter.value !== "") {
-              filters.push(f[i]);
-            }
-          }
-
-          props.setUpdatedFilters(true);
-          props.setFilters(filters);
-          props.setSort({ type: props.sortType, direction: props.sortDir });
-        }}
-        className="filters__button--save"
-      >
-        Filter
-      </GenericButton>
-    </>
-  );
 }
 
 function DestinationsPage() {

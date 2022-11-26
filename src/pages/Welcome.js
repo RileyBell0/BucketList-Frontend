@@ -1,100 +1,118 @@
 import "../styles/welcome.css";
 import React from "react";
 import WelcomeButton from "../components/WelcomeButton.js";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { isDarkTheme, loadUserTheme } from "../themes/Themes";
+import PageContent from "../components/PageContent";
 
-function WelcomeImageText() {
+// Return a div containing relevant redirect buttons
+function WelcomeButtons() {
+  const { authenticated, loadedAuth } = useAuth();
+  const navigate = useNavigate();
+
+  // Determine which buttons are needed on the page
+  let buttons = <></>;
+  if (!loadedAuth) {
+    buttons = (
+      <WelcomeButton className="welcome-button welcome-button__loading">
+        Loading...
+      </WelcomeButton>
+    );
+  } else if (authenticated) {
+    buttons = (
+      <WelcomeButton onClick={() => navigate("/destinations")}>
+        My Destinations
+      </WelcomeButton>
+    );
+  } else {
+    buttons = (
+      <>
+        <WelcomeButton onClick={() => navigate("/login")}>Log In</WelcomeButton>
+        <WelcomeButton onClick={() => navigate("/signup")}>
+          Sign Up
+        </WelcomeButton>
+      </>
+    );
+  }
+
+  // Return page buttons
+  return <div className="welcome__content__buttons">{buttons}</div>;
+}
+
+function AboutSection() {
   return (
     <>
-      <div id="welcome__content__text-container">
-        <Link to="/about" className="welcome__content__about-link">
-          About
-        </Link>
-        <p id="welcome__content__image-attribution">
-          {" • "}
-          <a
-            className="welcome__content__image-attribution-link"
-            href="https://www.flickr.com/photos/gomera/32486971398/in/photostream/"
-          >
-            Sunrise @ Playa de Caleta
-          </a>{" "}
-          by{" "}
-          <a
-            className="welcome__content__image-attribution-link"
-            href="https://www.flickr.com/photos/gomera/"
-          >
-            Jörg Bergmann
-          </a>
-          {" - "}
-          <a
-            className="welcome__content__image-attribution-link"
-            href="https://creativecommons.org/licenses/by-nc-nd/2.0/"
-          >
-            (CC BY-NC-ND 2.0)
-          </a>
+      <PageContent>
+        <h1>About</h1>
+        <br />
+        <p className="welcome__about__text--highlighted">Bucket List </p>
+        <p className="welcome__about__text">
+          was founded in 1202 by a small group of travel enthusiasts who
+          discovered javascript engraved on a stone in their village.
+          <br />
+          <br />
+          They wanted to make an easy way to plan what they wanted to do in
+          their life and the destinations they wanted to visit.
         </p>
-      </div>
+        <p className="welcome__about__text">A </p>
+        <p className="welcome__about__text--highlighted">Bucket List </p>
+        <p className="welcome__about__text">
+          is a list of experiences or achievements that you might want to
+          accomplish during your lifetime.
+          <br />
+          <br />
+        </p>
+        <p className="welcome__about__text--highlighted">BucketListApp.org </p>
+        <p className="welcome__about__text">
+          will help you get done what you want most, by keeping track of all the
+          things you've
+        </p>
+        <p className="welcome__about__text--highlighted">
+          {" "}
+          always wanted to do.
+        </p>
+      </PageContent>
     </>
   );
 }
 
+// Welcome page content
 function Welcome() {
-  const { authenticated, loadedAuth } = useAuth();
-
   return (
-    <>
+    <div className="welcome__globals">
       <div className="welcome__bg" />
+      <div
+        className={
+          "welcome__header-bg" +
+          (isDarkTheme() ? " welcome__header-bg--dark" : "")
+        }
+      />
       <div className="welcome__content">
         <div>
           <h1 className="welcome__content__header">Bucket List</h1>
           <h1 className="welcome__content__subheader">Destination Tracker</h1>
         </div>
-        {loadedAuth && (
-          <>
-            {authenticated === false && (
-              <>
-                <div className="welcome__content__buttons">
-                  <Link to="/login">
-                    <WelcomeButton>Log In</WelcomeButton>
-                  </Link>
-                  <Link to="/signup">
-                    <WelcomeButton>Sign Up</WelcomeButton>
-                  </Link>
-                </div>
-              </>
-            )}
-            {authenticated && (
-              <div className="welcome__content__buttons">
-                <Link to="/destinations">
-                  <WelcomeButton className="welcome-button__home">
-                    My Destinations
-                  </WelcomeButton>
-                </Link>
-              </div>
-            )}
-          </>
-        )}
-        {loadedAuth === false && (
-          <>
-            <div className="welcome__content__buttons">
-              <WelcomeButton className="welcome-button__loading">
-                Loading...
-              </WelcomeButton>
-            </div>
-          </>
-        )}
-        <WelcomeImageText />
+        <WelcomeButtons />
       </div>
-    </>
+      <AboutSection />
+    </div>
   );
 }
 
+// Overall Page Attributes
 function WelcomePage() {
   document.title = "Bucket List";
+  loadUserTheme("default");
   return (
     <>
-      <Welcome />
+      <Footer className="welcome__footer">
+        <Navbar transparent={true} fixed={false}>
+          <Welcome />
+        </Navbar>
+      </Footer>
     </>
   );
 }
