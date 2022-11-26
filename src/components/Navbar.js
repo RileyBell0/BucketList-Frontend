@@ -1,6 +1,6 @@
 import "../styles/Navbar.css";
 import React, { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { ReactComponent as Hamburger } from "../images/hamburger.svg";
 import { ReactComponent as Cross } from "../images/hamburger_close.svg";
