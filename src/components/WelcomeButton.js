@@ -7,8 +7,8 @@ function WelcomeButton({ className, children, loading, onClick }) {
       <div className="welcome-button" onClick={onClick}>
         <p
           className={
-            "welcome-button__text " +
-            className +
+            "welcome-button__text" +
+            (className ? " " + className : "") +
             (loading ? " welcome-button__loading" : "")
           }
         >
