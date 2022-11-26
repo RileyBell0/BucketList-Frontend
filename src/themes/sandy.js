@@ -1,4 +1,4 @@
-const sandyCoveTheme = {
+const sandyTheme = {
   "--color-primary": "#d9b86c",
   "--accent-main": "var(--color-primary)",
   "--color-primary-inverse": "white",
@@ -24,4 +24,4 @@ const sandyCoveTheme = {
   "--map-marker-color": "#d9b86c",
 };
 
-export default sandyCoveTheme;
+export default sandyTheme;
