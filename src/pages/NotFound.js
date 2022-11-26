@@ -6,15 +6,21 @@ import PageContent from "../components/PageContent";
 import { ThemeLoader } from "../themes/Themes";
 import PageBackground from "../components/PageBackground";
 import Footer from "../components/Footer";
+import { useAuth } from "../auth/auth";
 
 function NotFound() {
   const [counter, setCounter] = useState(2);
+  const { authenticated } = useAuth();
   const navigate = useNavigate();
 
-  // Return to welcome page after 5 seconds
+  // Return to the home page after 5 seconds
   useEffect(() => {
     if (counter === 0) {
-      navigate("/");
+      if (authenticated) {
+        navigate("/destinations");
+      } else {
+        navigate("/");
+      }
     }
     counter > 0 &&
       setTimeout(() => {

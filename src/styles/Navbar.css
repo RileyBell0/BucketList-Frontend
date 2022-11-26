@@ -3,9 +3,9 @@
 }
 
 .navbar__container {
-  --navbar--color-primary: var(--color-primary);
-  --navbar--background: var(--color-primary-inverse);
-  color: var(--navbar--color-primary);
+  --navbar--color-header: var(--color-header);
+  --navbar--background: var(--card-color);
+  color: var(--navbar--color-header);
 
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   position: fixed;
 }
 .navbar__container--transparent {
-  --navbar--color-primary: white;
+  --navbar--color-header: white;
   --navbar--background: transparent;
 }
 
@@ -35,7 +35,7 @@
   height: 100%;
   top: 0;
   border-radius: var(--standard-border-radius);
-  border: 1px solid var(--navbar--color-primary);
+  border: 1px solid var(--navbar--color-header);
   box-sizing: border-box;
 }
 
@@ -63,15 +63,15 @@
   width: 100%;
 }
 .navbar__links--separator {
-  border-bottom: 0.5px solid var(--color-primary);
+  border-bottom: 0.5px solid var(--color-header);
   width: 100%;
   max-width: 150px;
   align-self: center;
 }
 
 .navbar-dropdown-mobile {
-  background-color: var(--color-primary-inverse);
-  color: var(--color-primary);
+  background-color: var(--card-color);
+  color: var(--color-header);
 
   width: 100%;
   max-width: 200px;
@@ -81,7 +81,7 @@
   padding: 10px;
 
   border-radius: var(--standard-border-radius);
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-header);
   z-index: 701;
   box-sizing: border-box;
 
@@ -117,10 +117,10 @@
   background-color: var(--navbar--background);
 }
 .navbar__hamburger {
-  fill: var(--navbar--color-primary);
+  fill: var(--navbar--color-header);
 }
 .navbar__cross {
-  fill: var(--navbar--color-primary);
+  fill: var(--navbar--color-header);
 }
 
 .navbar__links {

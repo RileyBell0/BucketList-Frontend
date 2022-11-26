@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import "../styles/footer.css";
 
-function Footer({ children, textClass, footerClass }) {
+function Footer({ children, textClass, className }) {
   const { handleLogout, authenticated } = useAuth();
 
   const text = "footer__text " + (textClass ? textClass : "");
@@ -11,9 +11,7 @@ function Footer({ children, textClass, footerClass }) {
     <>
       <div className="footer__placement">
         <div className="footer__children-container">{children}</div>
-        <div
-          className={"footer__container " + (footerClass ? footerClass : "")}
-        >
+        <div className={"footer__container " + (className ? className : "")}>
           <div className="footer__content">
             <Link to="/" className="footer__link">
               <p className={text}>About Us</p>

@@ -100,12 +100,8 @@ function isDarkTheme() {
   }
 
   if (useSystemTheme) {
-    console.log("USE SYSTEM THEME");
-    console.log("USE SYSTEM THEME" + prefersDarkMode);
     return prefersDarkMode;
   } else {
-    console.log("USE DARK MODE");
-    console.log("USE DARK MODE" + darkMode);
     return darkMode;
   }
 }

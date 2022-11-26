@@ -1,9 +1,11 @@
 import "../styles/pageContent.css";
 
-function PageContent({ children }) {
+function PageContent({ children, className }) {
   return (
     <div className="scroll-content">
-      <div className="page-content__body">
+      <div
+        className={"page-content__body" + (className ? " " + className : "")}
+      >
         <div>{children}</div>
       </div>
     </div>

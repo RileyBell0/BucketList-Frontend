@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ThemeLoader } from "../themes/Themes";
+import { isDarkTheme, ThemeLoader } from "../themes/Themes";
 import PageContent from "../components/PageContent";
 
 // Return a div containing relevant redirect buttons
@@ -45,7 +45,6 @@ function WelcomeButtons() {
 function AboutSection() {
   return (
     <>
-      <br />
       <PageContent>
         <h1>About Placeholder</h1>
         <br />
@@ -85,6 +84,12 @@ function Welcome() {
   return (
     <div className="welcome__globals">
       <div className="welcome__bg" />
+      <div
+        className={
+          "welcome__header-bg" +
+          (isDarkTheme() ? " welcome__header-bg--dark" : "")
+        }
+      />
       <div className="welcome__content">
         <div>
           <h1 className="welcome__content__header">Bucket List</h1>
@@ -102,9 +107,9 @@ function WelcomePage() {
   document.title = "Bucket List";
   return (
     <>
-      <Footer>
+      <Footer className="welcome__footer">
+        <ThemeLoader />
         <Navbar transparent={true} fixed={false}>
-          <ThemeLoader />
           <Welcome />
         </Navbar>
       </Footer>
