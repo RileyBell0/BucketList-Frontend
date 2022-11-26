@@ -46,7 +46,7 @@ function AboutSection() {
   return (
     <>
       <PageContent>
-        <h1>About Placeholder</h1>
+        <h1>About</h1>
         <br />
         <p className="welcome__about__text--highlighted">Bucket List </p>
         <p className="welcome__about__text">
