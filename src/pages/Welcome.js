@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { isDarkTheme, ThemeLoader } from "../themes/Themes";
+import { isDarkTheme, loadUserTheme } from "../themes/Themes";
 import PageContent from "../components/PageContent";
 
 // Return a div containing relevant redirect buttons
@@ -105,10 +105,10 @@ function Welcome() {
 // Overall Page Attributes
 function WelcomePage() {
   document.title = "Bucket List";
+  loadUserTheme("default");
   return (
     <>
       <Footer className="welcome__footer">
-        <ThemeLoader />
         <Navbar transparent={true} fixed={false}>
           <Welcome />
         </Navbar>

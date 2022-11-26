@@ -13,7 +13,7 @@ const defaultDark = {
   "--card-color": "#292929",
   "--field-color": "#363636",
   "--bg-opacity": "0.07",
-  "--bg-color": "#00090d",
+  "--bg-color": "#000e15",
   "--color-shadow": "#00000080",
   "--color-inactive": "#1b2833",
   "--color-inactive-alt": "white",

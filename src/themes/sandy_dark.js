@@ -1,8 +1,8 @@
-const sandyCoveThemeDark = {
+const sandyThemeDark = {
   "--color-primary": "#b09557",
   "--accent-main": "var(--color-primary)",
   "--color-primary-inverse": "white",
-  "--color-secondary": "#5e9fac",
+  "--color-secondary": "#aca25e",
   "--color-secondary-inverse": "white",
   "--color-tertiary": "#6abcab",
   "--color-tertiary-inverse": "white",
@@ -24,4 +24,4 @@ const sandyCoveThemeDark = {
   "--map-marker-color": "#b09557",
 };
 
-export default sandyCoveThemeDark;
+export default sandyThemeDark;
