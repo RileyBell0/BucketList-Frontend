@@ -18,7 +18,16 @@
   filter: brightness(95%);
   cursor: pointer;
 }
+.item-card--disabled:hover {
+  filter: brightness(100%) !important;
+  cursor: default !important;
+}
 
+.item-card__disabled {
+  min-height: 122px !important;
+  height: 122px !important;
+  max-height: 122px !important;
+}
 .item-card__image--container {
   display: flex;
   flex-direction: column;
@@ -244,6 +253,7 @@
 .item-card__icons__icon--container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 3px;
   padding: 5px;
 }
@@ -262,11 +272,15 @@
   max-height: 28px;
 }
 .item-card__icons__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   border: none;
   background-color: transparent;
   margin: 0;
   max-height: 28px;
+  width: 28px;
 }
 .item-card__icons__icon:hover {
   cursor: pointer;
@@ -274,7 +288,7 @@
   border-radius: 5px;
   filter: brightness(90%);
 }
-.item-card__icons__icon--delete {
+.item-card__icons__icon--edit {
   height: 24px;
   width: auto;
   position: relative;
@@ -288,7 +302,7 @@
   padding: 0 2px;
 }
 
-.item-card__icons__delete {
+.item-card__icons__icon--edit {
   display: block;
   height: 24px;
   width: auto;

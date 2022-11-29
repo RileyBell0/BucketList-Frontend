@@ -39,7 +39,7 @@
 
   /* General properties (UNRELATED TO THEMES) */
   --welcome-bg-file: url("../images/welcome-bg.jpg");
-  --welcome-bg-dark-file: url("../images/welcome-bg-dark.jpg");
+  /* --welcome-bg-dark-file: url("../images/welcome-bg-dark.jpg"); */
   --card-gap: 15px;
   --font-family: Inter;
   --responsive-width: 650px;

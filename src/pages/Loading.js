@@ -1,6 +1,6 @@
 import "../styles/loading.css";
 import { loadUserTheme } from "../themes/Themes";
-import LoadingIcon from "../components/LoadingIcon";
+import logo from "../images/logo.png";
 
 function Loading() {
   loadUserTheme(localStorage.getItem("theme"));
@@ -8,8 +8,7 @@ function Loading() {
   return (
     <>
       <div className="loading">
-        <h1 className="loading__text">Loading</h1>
-        <LoadingIcon className="loading__loading-icon" />
+        <img src={logo} className="loading__image" />
       </div>
     </>
   );

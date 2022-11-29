@@ -7,14 +7,10 @@ import { ReactComponent as Cross } from "../images/hamburger_close.svg";
 import Globals from "../Globals";
 import { useAuth } from "../auth/auth";
 
-function Navbar({ children, transparent, fixed }) {
+function Navbar({ children, fixed }) {
   const { authenticated, handleLogout } = useAuth();
   const [hamburgerActive, setHamburgerActive] = useState(false);
-  let navbarClass = "navbar";
   let homeLink = "/";
-  if (transparent) {
-    navbarClass += " navbar--transparent";
-  }
   if (authenticated) {
     homeLink = "/destinations";
   }
@@ -86,7 +82,7 @@ function Navbar({ children, transparent, fixed }) {
   // Navbar contents on desktop
   const generateDesktop = () => {
     return (
-      <div className={navbarClass}>
+      <div className="navbar">
         <Link className="navbar__title" to={homeLink}>
           Bucket List
         </Link>
@@ -113,10 +109,9 @@ function Navbar({ children, transparent, fixed }) {
 
   // Navbar contents on Mobile
   const generateMobile = () => {
-    navbarClass += " navbar--mobile";
     return (
       <>
-        <div className={navbarClass}>
+        <div className="navbar navbar--mobile">
           <Link className="navbar__title" to={homeLink}>
             Bucket List
           </Link>
@@ -143,9 +138,6 @@ function Navbar({ children, transparent, fixed }) {
   let overallClass = "navbar__container";
   if (fixed !== false) {
     overallClass += " navbar__container--fixed";
-  }
-  if (transparent) {
-    overallClass += " navbar__container--transparent";
   }
 
   return (

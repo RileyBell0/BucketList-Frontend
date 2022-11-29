@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Delete } from "../images/delete.svg";
+import { ReactComponent as Edit } from "../images/edit.svg";
 import { ReactComponent as Pin } from "../images/location_pin.svg";
 import "../styles/ItemCards.css";
 import { createSearchParams, useNavigate } from "react-router-dom";
@@ -41,7 +41,7 @@ function DestinationImageMobile({ imgLink }) {
   );
 }
 
-function ItemCard({ item, onDeletionIconClick, from }) {
+function ItemCard({ item, from, disabled }) {
   const navigate = useNavigate();
 
   let destSearchParams = {};
@@ -53,16 +53,22 @@ function ItemCard({ item, onDeletionIconClick, from }) {
     return (
       <>
         <Card
-          className="item-card"
-          onClick={() => {
-            navigate(
-              {
-                pathname: "/destinations/" + item._id,
-                search: `?${createSearchParams(destSearchParams)}`,
-              },
-              { state: { dest: item } }
-            );
-          }}
+          className={
+            "item-card" + (disabled === true ? " item-card--disabled" : "")
+          }
+          onClick={
+            disabled === true
+              ? () => {}
+              : () => {
+                  navigate(
+                    {
+                      pathname: "/destinations/" + item._id,
+                      search: `?${createSearchParams(destSearchParams)}`,
+                    },
+                    { state: { dest: item } }
+                  );
+                }
+          }
         >
           <DestinationImageDesktop imgLink={item.imgLink} />
           <div className="item-card__content">
@@ -75,8 +81,9 @@ function ItemCard({ item, onDeletionIconClick, from }) {
                   {item.type}
                   {
                     // If a city/country doesn't exist, the string is just whitespace
-                    String(item.city).trim() !== "" ||
-                    String(item.country).trim() !== ""
+                    (String(item.city).trim() !== "" ||
+                      String(item.country).trim() !== "") &&
+                    String(item.type).trim() !== ""
                       ? " | "
                       : ""
                   }
@@ -90,17 +97,6 @@ function ItemCard({ item, onDeletionIconClick, from }) {
                   }
                   {item.country}
                 </div>
-              </div>
-              <div className="item-card__content__header--icons">
-                <button
-                  className="item-card__icons__icon"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onDeletionIconClick(item);
-                  }}
-                >
-                  <Delete className="item-card__icons__delete" />
-                </button>
               </div>
             </div>
             <div className="item-card__content__desc">
@@ -117,7 +113,11 @@ function ItemCard({ item, onDeletionIconClick, from }) {
     return (
       <>
         <Card
-          className="item-card--mobile"
+          className={
+            disabled === true
+              ? "item-card--mobile item-card__disabled"
+              : "item-card--mobile"
+          }
           onClick={() => {
             navigate(
               {
@@ -140,8 +140,9 @@ function ItemCard({ item, onDeletionIconClick, from }) {
                   {item.type}
                   {
                     // If a city/country doesn't exist, the string is just whitespace
-                    String(item.city).trim() !== "" ||
-                    String(item.country).trim() !== ""
+                    (String(item.city).trim() !== "" ||
+                      String(item.country).trim() !== "") &&
+                    String(item.type).trim() !== ""
                       ? " | "
                       : ""
                   }
@@ -163,39 +164,37 @@ function ItemCard({ item, onDeletionIconClick, from }) {
             </div>
           </div>
 
-          <div className="item-card--mobile__icons">
-            <div
-              className="item-card__icons__icon--container item-card__icons__icon--container--mobile"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate({
-                  pathname: "/map",
-                  search: `?${createSearchParams({
-                    lat: item.position[0].lat,
-                    lng: item.position[0].lng,
-                    zoom: 13,
-                  })}`,
-                });
-              }}
-            >
-              <button className="item-card__icons__icon--mobile">
-                <Pin className="item-card__icons__icon--map" />
-              </button>
-              <p className="item-card__icons__icon--text">View on Map</p>
+          {disabled === true ? (
+            <></>
+          ) : (
+            <div className="item-card--mobile__icons">
+              <div
+                className="item-card__icons__icon--container item-card__icons__icon--container--mobile"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate({
+                    pathname: "/map",
+                    search: `?${createSearchParams({
+                      lat: item.position[0].lat,
+                      lng: item.position[0].lng,
+                      zoom: 13,
+                    })}`,
+                  });
+                }}
+              >
+                <button className="item-card__icons__icon--mobile">
+                  <Pin className="item-card__icons__icon--map" />
+                </button>
+                <p className="item-card__icons__icon--text">View on Map</p>
+              </div>
+              <div className="item-card__icons__icon--container item-card__icons__icon--container--mobile">
+                <button className="item-card__icons__icon--mobile">
+                  <Edit className="item-card__icons__icon--edit" />
+                </button>
+                <p className="item-card__icons__icon--text">Edit</p>
+              </div>
             </div>
-            <div
-              className="item-card__icons__icon--container item-card__icons__icon--container--mobile"
-              onClick={(e) => {
-                e.stopPropagation();
-                onDeletionIconClick(item);
-              }}
-            >
-              <button className="item-card__icons__icon--mobile">
-                <Delete className="item-card__icons__icon--delete" />
-              </button>
-              <p className="item-card__icons__icon--text">Delete</p>
-            </div>
-          </div>
+          )}
         </Card>
       </>
     );
@@ -213,19 +212,14 @@ function ItemCard({ item, onDeletionIconClick, from }) {
   );
 }
 
-function ItemCardList({ items, onDeletionIconClick, from }) {
+function ItemCardList({ items, from, disabled }) {
   return (
     <div className="item-card-list">
       {items.map((item) => (
-        <ItemCard
-          key={item._id}
-          item={item}
-          onDeletionIconClick={onDeletionIconClick}
-          from={from}
-        />
+        <ItemCard key={item._id} item={item} from={from} disabled={disabled} />
       ))}
     </div>
   );
 }
 
-export { ItemCardList };
+export { ItemCardList, ItemCard };
