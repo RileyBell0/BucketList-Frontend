@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import Footer from "../components/Footer";
 import { ThemeLoader } from "../themes/Themes";
-import PageContent from "../components/PageContent";
 import { ItemCard } from "../components/ItemCards";
 import riley from "../images/riley.png";
 import ted from "../images/ted.jpg";
@@ -45,7 +44,11 @@ function TeamCard({ name, photo, roles }) {
       </div>
       <div className="team__name">{name}</div>
       {roles.map((role) => {
-        return <div className="team__role">{role}</div>;
+        return (
+          <div className="team__role" key={role}>
+            {role}
+          </div>
+        );
       })}
     </div>
   );
