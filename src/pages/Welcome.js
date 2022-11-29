@@ -118,7 +118,9 @@ function HeaderSection() {
         </div>
         <div className="welcome__content">
           <div>
-            <h1 className="welcome__header__heading">Where will you go?</h1>
+            <h1 className="welcome__header__heading">
+              Where will you go next?
+            </h1>
             <p className="welcome__header__text">
               Plan your next trip or record the restaurants you've tried. Making
               a Bucket List has never been easier

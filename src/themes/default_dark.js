@@ -22,6 +22,7 @@ const defaultDark = {
   "--outer-card-color": "#00000080",
   "--color-outline": "#90909080",
   "--map-marker-color": "#495c46",
+  "--color-separator": "#ededed",
 };
 
 export default defaultDark;

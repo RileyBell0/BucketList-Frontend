@@ -22,6 +22,7 @@ const eucalyptusTheme = {
   "--outer-card-color": "#FFFFFFb0",
   "--color-outline": "#90909080",
   "--map-marker-color": "#576d53",
+  "--color-separator": "#555555",
 };
 
 export default eucalyptusTheme;

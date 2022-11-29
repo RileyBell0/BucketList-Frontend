@@ -36,6 +36,7 @@
 
   /* misc */
   --color-shadow: #90909080;
+  --color-separator: #7d7d7d;
 
   /* General properties (UNRELATED TO THEMES) */
   --welcome-bg-file: url("../images/welcome-bg.jpg");

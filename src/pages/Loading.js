@@ -8,7 +8,7 @@ function Loading() {
   return (
     <>
       <div className="loading">
-        <img src={logo} className="loading__image" />
+        <img src={logo} className="loading__image" alt="Bucket List Logo" />
       </div>
     </>
   );
