@@ -22,7 +22,7 @@ const sandyThemeDark = {
   "--outer-card-color": "#00000080",
   "--color-outline": "#90909080",
   "--map-marker-color": "#b09557",
-  "--color-separator": "#ededed",
+  "--color-separator": "#3c3c3c",
 };
 
 export default sandyThemeDark;
