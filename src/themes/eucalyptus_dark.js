@@ -22,6 +22,7 @@ const eucalyptusDark = {
   "--outer-card-color": "#00000080",
   "--color-outline": "#90909080",
   "--map-marker-color": "#495c46",
+  "--color-separator": "#3c3c3c",
 };
 
 export default eucalyptusDark;

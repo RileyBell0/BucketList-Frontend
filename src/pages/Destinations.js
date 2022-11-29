@@ -11,7 +11,6 @@ import { ItemCardList } from "../components/ItemCards";
 import { ItemCardLoading } from "../components/Templates";
 import { ReactComponent as FiltersIcon } from "../images/filters.svg";
 import PageContent from "../components/PageContent";
-import { DeletionModal } from "../components/DeletionModal";
 import PageBackground from "../components/PageBackground";
 import Footer from "../components/Footer";
 import WideToggle from "../components/WideToggle";
@@ -26,7 +25,6 @@ function Destinations() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [visited, setVisited] = useState(false);
   const [filters, setFilters] = useState([]);
-  const [deletionModal, setDeletionModal] = useState(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [items, setItems] = useState([]);
   const [trips, setTrips] = useState([]);
@@ -195,79 +193,6 @@ function Destinations() {
   };
   const { unvisitedCount, visitedCount } = getLocationCount();
 
-  /*
-   * Saves the provided item in the place of the item with the matching item id
-   */
-  const updateItem = (newItemState) => {
-    setItems(
-      items.map((item) => {
-        if (item._id === newItemState._id) {
-          return newItemState;
-        } else {
-          return item;
-        }
-      })
-    );
-  };
-
-  /*
-   * Removes the given item from "items" (note - just checks the attached item
-   * ID)
-   */
-  const removeItem = (item) => {
-    setItems(items.filter((location) => location._id !== item._id));
-  };
-
-  /*
-   * Mark item as visited here, and in the backend
-   */
-  const onMarkVisitedClick = (item) => {
-    item.visited = true;
-    updateItem(item);
-
-    backendFetch.post("updateDestination/" + item._id, {
-      visited: true,
-    });
-  };
-
-  /*
-   * Mark item as unvisited here, and in the backend
-   */
-  const onMarkUnvisitedClick = (item) => {
-    item.visited = false;
-    updateItem(item);
-
-    backendFetch.post("updateDestination/" + item._id, {
-      visited: false,
-    });
-  };
-
-  /*
-   * On confirmation, remove the item from the items list, and request its
-   * deletion from the database
-   */
-  const onDeletionModalConfirmation = () => {
-    removeItem(deletionModal);
-
-    onDeletionModalCancel();
-
-    backendFetch.post("deleteDestination/" + deletionModal._id);
-  };
-
-  /*
-   * Attach the given item to the deletion modal
-   */
-  const onDeletionIconClick = (item) => {
-    setDeletionModal(item);
-  };
-
-  /*
-   * Remove the attached item from the deletion modal
-   */
-  const onDeletionModalCancel = () => {
-    setDeletionModal(null);
-  };
-
   const FiltersToggle = () => {
     return (
       <button
@@ -422,14 +347,6 @@ function Destinations() {
 
   return (
     <>
-      {deletionModal && (
-        <DeletionModal
-          itemName={deletionModal.name}
-          onDeletionModalCancel={onDeletionModalCancel}
-          onDeletionModalConfirmation={onDeletionModalConfirmation}
-        />
-      )}
-
       <div className="destinations-content">
         <WideToggle
           state={visited}
@@ -461,12 +378,7 @@ function Destinations() {
             </div>
           </>
         ) : (
-          <ItemCardList
-            items={getFiltered(visited)}
-            onDeletionIconClick={onDeletionIconClick}
-            onMarkVisitedClick={onMarkVisitedClick}
-            onMarkUnvisitedClick={onMarkUnvisitedClick}
-          />
+          <ItemCardList items={getFiltered(visited)} />
         )}
       </div>
     </>
