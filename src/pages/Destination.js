@@ -232,7 +232,7 @@ function Destination({ dest, back }) {
       console.log(updateInfo);
       backendFetch
         .post(
-          "updateDestination/" + dest._id + "/" + changedImage,
+          "/updateDestination/" + dest._id + "/" + changedImage,
           updateInfo,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -300,7 +300,7 @@ function Destination({ dest, back }) {
 
     setDeletionModal(null);
     setDeleting(true);
-    backendFetch.post("deleteDestination/" + deletionModal._id).then(() => {
+    backendFetch.post("/deleteDestination/" + deletionModal._id).then(() => {
       setDeleting(false);
       navigate(back);
     });

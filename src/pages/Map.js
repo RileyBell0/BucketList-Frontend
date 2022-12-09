@@ -44,7 +44,7 @@ function Map(props) {
     var visitedLocationsTemp = [];
 
     await backendFetch
-      .get(Globals.apiRootUrl + "getDestinations")
+      .get(Globals.apiRootUrl + "/getDestinations")
       .then(function (response) {
         response.data.map(async (item) => {
           // Only display valid markers
@@ -199,7 +199,7 @@ function Map(props) {
   const onDeletionModalConfirmation = async () => {
     // Remove from the backend
     console.log("Deleting " + popupItem._id);
-    backendFetch.post("deleteDestination/" + popupItem._id);
+    backendFetch.post("/deleteDestination/" + popupItem._id);
 
     // Remove the marker
     if (popupItem.visited) {

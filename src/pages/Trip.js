@@ -127,7 +127,7 @@ function Trip({ trip, destinations, tripNames }) {
     if (Object.keys(updateInfo).length !== 0) {
       console.log(updateInfo);
       backendFetch
-        .post("updateTrip/" + id, updateInfo, {
+        .post("/updateTrip/" + id, updateInfo, {
           headers: { "Content-Type": "application/json" },
         })
         .then(() => {
@@ -161,9 +161,11 @@ function Trip({ trip, destinations, tripNames }) {
     setDestDeletionModal(null);
     setDeleting(true);
     removeDest(destDeletionModal);
-    backendFetch.post("deleteDestination/" + destDeletionModal._id).then(() => {
-      setDeleting(false);
-    });
+    backendFetch
+      .post("/deleteDestination/" + destDeletionModal._id)
+      .then(() => {
+        setDeleting(false);
+      });
   };
   const onDestDeletionModalCancel = () => {
     setDestDeletionModal(null);

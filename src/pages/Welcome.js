@@ -32,7 +32,7 @@ const exampleItems = [
     country: "Australia",
     imgLink:
       "https://imgix.theurbanlist.com/content/article/mjolner-melbourne-bar.jpg",
-    desc: "A Viking and Norse inspired restaurant? In the heart of Melbourne? Where you get to choose your own knife to eat with? Sign me up.",
+    desc: "A Viking and Norse-inspired restaurant? In the heart of Melbourne? And you get to choose your own knife to eat with? Sign me up.",
   },
 ];
 
@@ -144,7 +144,7 @@ function ExampleSection() {
                 Choose your next destination
               </h1>
               <p className="welcome__example__text">
-                Do you want to travel aboard? Go Sightseeing? Or maybe try out
+                Do you want to travel aboard? Go sightseeing? Or maybe try out
                 that new restaurant down the street?
               </p>
             </div>
@@ -156,7 +156,7 @@ function ExampleSection() {
             <div className="welcome__example__padding">
               <h1 className="welcome__example__header">Track your goals</h1>
               <p className="welcome__example__text">
-                Whether you want to plan your trip to France, or remember the
+                Whether you want to plan your trip to France or remember the
                 next restaurant to try, you can plan it with Bucket List
               </p>
               <br />
@@ -176,7 +176,7 @@ function ExampleSection() {
             <div className="welcome__example__padding">
               <h1 className="welcome__example__header">Organise your goals</h1>
               <p className="welcome__example__text">
-                Maybe you have a trip planned to Europe, or a list of local
+                Maybe you have a trip planned to Europe or a list of local
                 restaurants you want to try. Group these together and start
                 checking them off!
               </p>
