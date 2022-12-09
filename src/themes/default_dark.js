@@ -23,6 +23,7 @@ const defaultDark = {
   "--color-outline": "#90909080",
   "--map-marker-color": "#495c46",
   "--color-separator": "#3c3c3c",
+  "--welcome-bg-color": "var(--bg-color)",
 };
 
 export default defaultDark;

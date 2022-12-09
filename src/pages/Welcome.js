@@ -1,10 +1,10 @@
 import "../styles/welcome.css";
-import React from "react";
+import React, { useEffect } from "react";
 import WelcomeButton from "../components/WelcomeButton.js";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import Footer from "../components/Footer";
-import { ThemeLoader } from "../themes/Themes";
+import { loadUserTheme } from "../themes/Themes";
 import { ItemCard } from "../components/ItemCards";
 import riley from "../images/riley.png";
 import ted from "../images/ted.jpg";
@@ -228,7 +228,7 @@ function WelcomePage() {
     <>
       <div className="welcome__globals">
         <Footer className="welcome__footer">
-          <ThemeLoader />
+          <WelcomeThemeEnforcer />
           <HeaderSection />
           {/* <AboutSection />
           <div className="welcome__separator" /> */}
@@ -240,6 +240,21 @@ function WelcomePage() {
       </div>
     </>
   );
+}
+function WelcomeThemeEnforcer() {
+  loadUserTheme("default");
+
+  useEffect(() => {
+    const result = window.matchMedia("(prefers-color-scheme: dark)");
+    result.addEventListener("change", () => {
+      refreshTheme();
+    });
+  });
+
+  return <Outlet />;
+}
+function refreshTheme() {
+  loadUserTheme("default");
 }
 
 export default WelcomePage;

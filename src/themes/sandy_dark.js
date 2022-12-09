@@ -23,6 +23,7 @@ const sandyThemeDark = {
   "--color-outline": "#90909080",
   "--map-marker-color": "#b09557",
   "--color-separator": "#3c3c3c",
+  "--welcome-bg-color": "var(--bg-color)",
 };
 
 export default sandyThemeDark;

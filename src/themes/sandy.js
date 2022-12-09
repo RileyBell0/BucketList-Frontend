@@ -23,6 +23,7 @@ const sandyTheme = {
   "--color-outline": "#90909080",
   "--map-marker-color": "#d9b86c",
   "--color-separator": "#555555",
+  "--welcome-bg-color": "var(--card-color)",
 };
 
 export default sandyTheme;

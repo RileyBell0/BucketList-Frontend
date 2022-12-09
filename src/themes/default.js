@@ -23,6 +23,7 @@ const defaultTheme = {
   "--color-outline": "#90909080",
   "--map-marker-color": "#576d53",
   "--color-separator": "#555555",
+  "--welcome-bg-color": "var(--card-color)",
 };
 
 export default defaultTheme;
