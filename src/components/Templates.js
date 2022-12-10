@@ -117,17 +117,6 @@ function ItemCardLoading() {
             </div>
           </div>
         </div>
-
-        <div className="templates__item-card__buttons templates__item-card__buttons--mobile">
-          <div className="templates__item-card__icon-button__container">
-            <div className="templates__icon-button" />
-            <div className="templates__icon-button__desc--map" />
-          </div>
-          <div className="templates__item-card__icon-button__container">
-            <div className="templates__icon-button" />
-            <div className="templates__icon-button__desc--delete" />
-          </div>
-        </div>
       </Card>
     );
   };
