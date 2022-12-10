@@ -115,18 +115,22 @@ function ItemCard({ item, from, disabled }) {
         <Card
           className={
             disabled === true
-              ? "item-card--mobile item-card__disabled"
+              ? "item-card--mobile item-card--disabled"
               : "item-card--mobile"
           }
-          onClick={() => {
-            navigate(
-              {
-                pathname: "/destinations/" + item._id,
-                search: `?${createSearchParams(destSearchParams)}`,
-              },
-              { state: { dest: item } }
-            );
-          }}
+          onClick={
+            disabled === true
+              ? () => {}
+              : () => {
+                  navigate(
+                    {
+                      pathname: "/destinations/" + item._id,
+                      search: `?${createSearchParams(destSearchParams)}`,
+                    },
+                    { state: { dest: item } }
+                  );
+                }
+          }
         >
           <div className="item-card--mobile__header">
             <DestinationImageMobile imgLink={item.imgLink} />
@@ -164,7 +168,7 @@ function ItemCard({ item, from, disabled }) {
             </div>
           </div>
 
-          {disabled === true ? (
+          {/* {disabled === true ? (
             <></>
           ) : (
             <div className="item-card--mobile__icons">
@@ -194,7 +198,7 @@ function ItemCard({ item, from, disabled }) {
                 <p className="item-card__icons__icon--text">Edit</p>
               </div>
             </div>
-          )}
+          )} */}
         </Card>
       </>
     );
